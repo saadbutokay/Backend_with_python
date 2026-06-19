@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal.md",
+                "file": "PHASE 00/Git & Version Control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Journal"
+              "title": "Git & Version Control"
             }
           }
         ]
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal.md",
+                "file": "PHASE 00/Git & Version Control.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Journal"
+              "title": "Backlinks for Git & Version Control"
             }
           },
           {
@@ -202,12 +202,14 @@
   },
   "active": "fbf8ba6f39eb3982",
   "lastOpenFiles": [
+    "Structure/PHASE 00 - FOUNDATIONS.md",
+    "PHASE 00/Git & Version Control.md",
     "ReadME.md",
+    "Journal.md",
+    "PHASE 00/Development Environment Setup.md",
     "PHASE 00/How the Internet Works.md",
     "PHASE 00/Prerequisite Briefing.md",
-    "Structure/PHASE 00 - FOUNDATIONS.md",
     "Structure/PHASE 01.md",
-    "Journal.md",
     "PHASE 00",
     "phase-1/Environment Tooling.md",
     "phase-1/1.9-iterators-generators-fp.md",

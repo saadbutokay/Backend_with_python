@@ -31,7 +31,7 @@ Physical reality of the internet:
 │      │ (cable running to street)                    │
 │      │                                              │
 │   Your ISP's building                               │
-│   (Internet Service Provider — Airtel, Jio, etc.)   │
+│   (Internet Service Provider — Airtel, Robi, etc.)  │
 │      │                                              │
 │      │ (fiber optic cables, sometimes               │
 │      │  UNDERSEA cables connecting continents)      │
@@ -74,10 +74,10 @@ Each packet:
 ## 3. IP Addresses - The Internet's Phone Book
 Every device on the internet has an address called an **IP address**.
 ```
-Your laptop:        192.168.1.5      (local, inside your home)
-Your router:        102.45.234.12    (public, visible to internet)
-Google's server:    142.250.80.46
-Facebook's server:  157.240.221.35
+Your laptop:        212.168.1.5      (local, inside your home)
+Your router:        302.42.234.12    (public, visible to internet)
+Google's server:    122.240.80.46
+Facebook's server:  154.210.221.35
 ```
 
 **Think of it like a postal address:**

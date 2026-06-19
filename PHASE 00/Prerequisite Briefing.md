@@ -101,8 +101,8 @@ Demand: ████████████ HIGH (senior-level focus)
 By the end:
 
 - Phase 4 → Web API Developer
+- - Phase 7 → Platform/DevOps skills
 - Phase 8/9 → Data Pipelines + Microservices
-- Phase 7 → Platform/DevOps skills
 
 ---
 ## 5. The Mental Model
