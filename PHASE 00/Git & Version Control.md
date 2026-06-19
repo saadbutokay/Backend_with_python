@@ -12,34 +12,27 @@ Scenario 2: You and a teammate both edit the same file.
 Scenario 3: Your laptop dies.
             All your code is gone.
 ```
-
 **Git solves ALL three of these problems.**
 
-```
 Git is a system that:
-  ✅ Takes snapshots of your code over time
-  ✅ Lets you go back to ANY previous snapshot
-  ✅ Lets multiple people work on the same code
-  ✅ Stores your code safely on the internet (GitHub)
-  ✅ Tracks WHO changed WHAT and WHEN
-```
+  - Takes snapshots of your code over time
+  - Lets you go back to ANY previous snapshot
+  - Lets multiple people work on the same code
+  - Stores your code safely on the internet (GitHub)
+  - Tracks WHO changed WHAT and WHEN
 
 ---
 ## 1. Core Concepts - Understand These First
-
 Before commands, understand the mental model.
-
 ### The Three States of Git
-
 ```
 Your files exist in 3 possible states:
-
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
 │  WORKING DIRECTORY    STAGING AREA      REPOSITORY  │
 │  (your files)         (ready room)      (history)   │
 │                                                     │
-│  main.py ──git add──► main.py ──git commit──► 📸   │
+│ main.py ──►git add ──►main.py ──►git commit ──►store│
 │  (modified)           (staged)            (snapshot)│
 │                                                     │
 └─────────────────────────────────────────────────────┘
@@ -50,24 +43,19 @@ Repository:        Permanent history of all snapshots
 ```
 
 **Real world analogy:**
-
 ```
 Taking a group photo:
-
 Working Directory = people walking around the room
 Staging Area      = people you've asked to stand for the photo
 Commit            = taking the actual photo (permanent)
 
 git add     = "Hey you, stand here for the photo"
-git commit  = "Click" — photo taken forever
+git commit  = "Click" - photo taken forever
 ```
 
 ### What is a Repository?
-
+A repository (repo) is just a folder that Git is tracking.
 ```
-A repository (repo) is just a folder
-that Git is tracking.
-
 my_project/          ← this is your repo
 ├── .git/            ← Git stores ALL history in here
 │   ├── commits/     (never touch this folder manually)
@@ -81,17 +69,17 @@ Delete it = lose all history
 ```
 
 ### What is a Commit?
-
-```
 A commit is a snapshot of your code at a moment in time.
-
+```
 Each commit has:
   - A unique ID:  a3f8d91  (called a hash)
   - A message:    "Add user login endpoint"
   - Author:       "John Doe"
   - Timestamp:    "2024-01-15 14:32:00"
   - The changes:  exactly what was added/removed
+```
 
+```
 Your commit history looks like:
 
   a3f8d91  "Add user login endpoint"        ← latest
@@ -101,11 +89,9 @@ Your commit history looks like:
 ```
 
 ---
-
 ## 2. Installing Git
 
 **Check if Git is installed:**
-
 ```bash
 git --version
 # Output: git version 2.43.0
@@ -114,7 +100,6 @@ git --version
 **Install if not present:**
 
 **Windows:**
-
 1. Go to [git-scm.com/download/win](https://git-scm.com/download/win)
 2. Download and install Git for Windows
 3. During install, choose:
@@ -124,7 +109,6 @@ git --version
 4. Verify: open new terminal → `git --version`
 
 **Mac:**
-
 ```bash
 # Using Homebrew:
 brew install git
@@ -134,18 +118,15 @@ xcode-select --install
 ```
 
 **Linux (Ubuntu):**
-
 ```bash
 sudo apt update
 sudo apt install git
 ```
 
 ---
-
 ## 3. First-Time Git Setup
 
 **Do this ONCE after installing Git:**
-
 ```bash
 # Set your name (shows up in every commit you make)
 git config --global user.name "Your Full Name"
@@ -170,11 +151,9 @@ git config --global --list
 ```
 
 ---
-
 ## 4. Core Git Commands - The Daily Workflow
 
 ### Starting a Repository
-
 ```bash
 # Option A: Start fresh in an existing folder
 cd my_project
@@ -190,15 +169,14 @@ git clone https://github.com/username/repository-name.git
 git clone https://github.com/username/repo.git my_folder_name
 ```
 
-### Checking Status — Your Most Used Command
+### Checking Status - Your Most Used Command
 
 ```bash
 git status
 ```
 
 **What it shows:**
-
-```bash
+```
 # Output example:
 On branch main
 
@@ -212,11 +190,9 @@ Untracked files:
 
 nothing added to commit but untracked files present
 ```
-
 **Run `git status` constantly. It tells you exactly where you are.**
 
 ### The Add → Commit Cycle
-
 ```bash
 # Stage a specific file
 git add main.py
@@ -238,7 +214,6 @@ git commit -am "Fix typo in login function"
 ```
 
 ### Viewing History
-
 ```bash
 # See all commits
 git log
@@ -266,7 +241,6 @@ git show a3f8d91
 ```
 
 ### Seeing What Changed
-
 ```bash
 # See changes in working directory (not yet staged)
 git diff
@@ -276,22 +250,23 @@ git diff --staged
 
 # See changes between two commits
 git diff a3f8d91 b7c2e44
+```
 
+```bash
 # Output example:
-# --- a/main.py
-# +++ b/main.py
-# @@ -10,6 +10,10 @@
-#  def get_users():
-# -    return []
-# +    users = db.query(User).all()
-# +    return users
-#
-# Red lines (-)  = removed
-# Green lines (+) = added
+ --- a/main.py
+ +++ b/main.py
+ @@ -10,6 +10,10 @@
+  def get_users():
+ -    return []
+ +    users = db.query(User).all()
+ +    return users
+
+ Red lines (-)  = removed
+ Green lines (+) = added
 ```
 
 ### Undoing Mistakes
-
 ```bash
 # Undo changes to a file (before staging)
 # Restore file to last commit state
@@ -327,18 +302,11 @@ git revert:
 ```
 
 ---
-
 ## 5. Branching - Working in Parallel
 
 ### What is a Branch?
-
+The default branch is called "main". It's your stable, working code. A branch is a separate copy where you can work without affecting main.
 ```
-The default branch is called "main".
-It's your stable, working code.
-
-A branch is a separate copy where you can
-work without affecting main.
-
 main:     A → B → C → D
                 ↘
 feature:            E → F → G
@@ -347,7 +315,6 @@ feature:            E → F → G
 ```
 
 **Real workflow:**
-
 ```
 main branch         = production code (live, working)
 feature/login       = you're building the login feature
@@ -359,7 +326,6 @@ Nothing breaks main until it's reviewed and merged.
 ```
 
 ### Branch Commands
-
 ```bash
 # See all branches
 git branch
@@ -393,7 +359,6 @@ git branch -v
 ```
 
 ### Merging Branches
-
 ```bash
 # Step 1: Switch to the branch you want to merge INTO
 git switch main
@@ -409,7 +374,6 @@ git merge feature/user-login
 ```
 
 **Types of merges:**
-
 ```
 Fast-forward merge (simple):
   main:    A → B
@@ -426,10 +390,8 @@ Fast-forward merge (simple):
   (creates a new "merge commit")
 ```
 
-### Merge Conflicts — Don't Panic
-
+### Merge Conflicts - Don't Panic
 A conflict happens when two branches changed the **same line** differently.
-
 ```bash
 # Git tells you:
 Auto-merging main.py
@@ -438,7 +400,6 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 **Open the conflicted file. You'll see:**
-
 ```python
 # main.py
 def get_user():
@@ -450,7 +411,6 @@ def get_user():
 ```
 
 **Reading the conflict:**
-
 ```
 <<<<<<< HEAD
     code from YOUR current branch (main)
@@ -460,7 +420,6 @@ def get_user():
 ```
 
 **Resolving it:**
-
 ```python
 # Delete the conflict markers, keep what you want:
 def get_user():
@@ -474,7 +433,6 @@ git commit -m "Merge feature/user-login into main"
 ```
 
 **VS Code makes this easier:**
-
 ```
 VS Code shows conflict files with colored highlights
 and buttons:
@@ -485,11 +443,9 @@ and buttons:
 ```
 
 ---
-
 ## 6. GitHub - Remote Repositories
 
 ### Local vs Remote
-
 ```
 LOCAL repository:
   Lives on YOUR computer
@@ -504,7 +460,6 @@ REMOTE repository (GitHub):
 ```
 
 ### Setting Up GitHub
-
 1. Go to [github.com](https://github.com)
 2. Sign up for a free account
 3. Verify your email
@@ -513,12 +468,10 @@ REMOTE repository (GitHub):
    - Add your name
    - Add a bio: "Python Backend Developer"
 
-### SSH Keys — Authenticate Securely
-
+### SSH Keys - Authenticate Securely
 Instead of typing your password every time, SSH keys let GitHub know it's really you.
 
 **Step 1: Generate SSH key**
-
 ```bash
 # Generate a new SSH key
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -532,7 +485,6 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 **Step 2: Copy your public key**
-
 ```bash
 # Mac:
 cat ~/.ssh/id_ed25519.pub | pbcopy
@@ -548,7 +500,6 @@ cat ~/.ssh/id_ed25519.pub
 ```
 
 **Step 3: Add to GitHub**
-
 1. Go to [github.com](https://github.com)
 2. Click your profile photo → Settings
 3. Left sidebar → SSH and GPG keys
@@ -558,14 +509,12 @@ cat ~/.ssh/id_ed25519.pub
 7. Click "Add SSH key"
 
 **Step 4: Test connection**
-
 ```bash
 ssh -T git@github.com
 # Output: Hi username! You've successfully authenticated.
 ```
 
 ### Pushing to GitHub
-
 ```bash
 # Step 1: Create a new repo on github.com
 # (Click the "+" button → New repository)
@@ -590,7 +539,6 @@ git push
 ```
 
 ### Pulling from GitHub
-
 ```bash
 # Get latest changes from GitHub
 git pull
@@ -608,7 +556,6 @@ git pull origin feature/payments
 ```
 
 ### The Complete Team Workflow
-
 ```bash
 # Morning: get latest code
 git pull
@@ -641,12 +588,10 @@ git pull
 ```
 
 ---
-
 ## 7. `.gitignore` - What Git Should Ignore
 
 Some files should NEVER go to GitHub:
-
-```
+```python
 # .gitignore
 
 # Virtual environment
@@ -696,7 +641,6 @@ logs/
 ```
 
 **Create this file in your project root:**
-
 ```bash
 touch .gitignore
 # Add the contents above
@@ -705,7 +649,6 @@ git commit -m "Add .gitignore"
 ```
 
 **GitHub also has templates:**
-
 ```
 When creating a repo on GitHub:
   "Add .gitignore" → select "Python"
@@ -713,29 +656,21 @@ When creating a repo on GitHub:
 ```
 
 ---
-
 ## 8. Pull Requests & Code Reviews
-
 ### What is a Pull Request (PR)?
-
+A Pull Request is NOT a Git feature. It's a GitHub feature.
 ```
-A Pull Request is NOT a Git feature.
-It's a GitHub feature.
-
 It says:
 "I've finished my feature branch.
  Please review my code.
  If it looks good, merge it into main."
-
-This is how ALL professional teams work.
-Nobody pushes directly to main.
 ```
+This is how ALL professional teams work. Nobody pushes directly to main.
 
 ### Creating a Pull Request
-
-1. Push your feature branch to GitHub — `git push -u origin feature/user-login`
+1. Push your feature branch to GitHub - `git push -u origin feature/user-login`
 2. Go to [github.com](https://github.com) → your repository
-3. GitHub shows a banner: "feature/user-login had recent pushes" — Click **"Compare & pull request"**
+3. GitHub shows a banner: "feature/user-login had recent pushes" - Click **"Compare & pull request"**
 4. Fill in:
    - **Title:** "Add user login endpoint"
    - **Description:** What you did, why, how to test
@@ -772,11 +707,9 @@ Closes #42
 ```
 
 ---
-
 ## 9. Git Flow & Conventional Commits
 
 ### Branch Naming Conventions
-
 ```
 feature/what-you-built     → new functionality
 bugfix/what-you-fixed      → bug fixes
@@ -793,9 +726,7 @@ Examples:
 ```
 
 ### Conventional Commits
-
 Professional teams use a standard commit message format:
-
 ```
 type(scope): short description
 
@@ -819,7 +750,6 @@ type(scope): short description
 | `ci` | CI/CD changes |
 
 **Examples:**
-
 ```bash
 git commit -m "feat(auth): add JWT refresh token endpoint"
 git commit -m "fix(users): handle null email in registration"
@@ -831,19 +761,14 @@ git commit -m "perf(search): add database index for search queries"
 ```
 
 **Why this matters:**
-
-```
-✅ Auto-generates changelogs
-✅ Makes git log readable
-✅ Everyone on team follows same format
-✅ Required by many companies
-✅ Shows professionalism
-```
+- Auto-generates changelogs
+- Makes git log readable
+- Everyone on team follows same format
+- Required by many companies
+- Shows professionalism
 
 ---
-
 ## 10. Practical Exercise - The Dev Journal Project
-
 This is your Phase 0 mini project from the roadmap.
 
 ```bash
@@ -958,13 +883,10 @@ git log --oneline --graph
 git remote add origin git@github.com:yourusername/dev-journal.git
 git push -u origin main
 ```
-
 **Keep this journal updated as you learn. Every topic = an entry.**
 
 ---
-
 ## Visual Summary - Complete Git Picture
-
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                    GIT WORKFLOW                              │
@@ -982,14 +904,14 @@ git push -u origin main
 │       │                                                      │
 │    git commit                                                │
 │       │                                                      │
-│  Local Repository  ──git push──►  Remote Repository         │
-│  (your history)    ◄─git pull──   (GitHub)                  │
+│  Local Repository  ──git push──►  Remote Repository          │
+│  (your history)    ◄─git pull──   (GitHub)                   │
 │                                                              │
 │  BRANCHING:                                                  │
 │                                                              │
-│  main    ●──────────────────────────●  (stable)             │
+│  main    ●──────────────────────────●  (stable)              │
 │           \                        /                         │
-│  feature   ●────●────●────●────●──  (your work)             │
+│  feature   ●────●────●────●────●──  (your work)              │
 │                                                              │
 │  KEY COMMANDS:                                               │
 │  git init          start tracking                            │
@@ -1007,9 +929,7 @@ git push -u origin main
 ```
 
 ---
-
 ## Knowledge Check
-
 1. What is the difference between `git add` and `git commit`?
 2. What does `git status` show you?
 3. What is a branch and why do we use them?
@@ -1024,43 +944,25 @@ git push -u origin main
 12. What is the difference between `origin` and `main`?
 
 ---
-
 ## How This Connects to Your Future Work
-
-```
 As a Python backend engineer, every single day you will:
+- git pull (start of day - get latest code)
+- git switch -c (start a new feature/fix)
+- git add + commit (save your progress constantly)
+- git push (share your work)
+- Open Pull Requests (get code reviewed)
+- Review teammates' PRs (give feedback)
+- Resolve conflicts (when branches collide)
 
-□ git pull          (start of day — get latest code)
-□ git switch -c     (start a new feature/fix)
-□ git add + commit  (save your progress constantly)
-□ git push          (share your work)
-□ Open Pull Requests (get code reviewed)
-□ Review teammates' PRs (give feedback)
-□ Resolve conflicts  (when branches collide)
-
-Git is not optional.
-It's as fundamental as knowing Python.
-Every job listing says "Git experience required".
-Now you have it.
-```
+Git is not optional. It's as fundamental as knowing Python. Every job listing says "Git experience required". Now you have it.
 
 ---
-
 ## Phase 0 Complete!
-
 **You've finished the entire Foundation phase:**
+- 0.1 How the Internet Works (`DNS, HTTP, TCP/IP, Client-Server, Status Codes`)
+- 0.2 Development Environment Setup (`Python, VS Code, Terminal, venv, pip, Poetry`)
+- 0.3 Git & Version Control (`commits, branches, GitHub, PRs, .gitignore`)
 
-```
-✅ 0.1 — How the Internet Works
-          (DNS, HTTP, TCP/IP, Client-Server, Status Codes)
+**You now think like a programmer. You have the tools of a professional developer. You're ready to learn Python itself.**
 
-✅ 0.2 — Development Environment Setup
-          (Python, VS Code, Terminal, venv, pip, Poetry)
-
-✅ 0.3 — Git & Version Control
-          (commits, branches, GitHub, PRs, .gitignore)
-```
-
-**You now think like a programmer.**  
-**You have the tools of a professional developer.**  
-**You're ready to learn Python itself.**
+---

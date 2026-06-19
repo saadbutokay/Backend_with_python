@@ -488,7 +488,6 @@ TOTAL TIME: ~100-300 milliseconds
 ---
 ## Knowledge Check
 Before we move on, answer these in your head (or out loud):
-
 1. What is an IP address?
 2. What is the difference between port 80 and port 443?
 3. What does DNS do?
@@ -529,14 +528,13 @@ As a Python backend engineer, you will:
 ## Want to Go Deeper? (Optional)
 These are NOT required right now, but bookmark for later:
 
-- **"How DNS Works"** — [dnsimple.com/a/cartoon](https://dnsimple.com/a/cartoon) (literal cartoon, excellent)
-- **"HTTP Crash Course"** — Traversy Media on YouTube
-- **Wireshark** — tool that lets you SEE packets traveling on your network
+- **"How DNS Works"** - [dnsimple.com/a/cartoon](https://dnsimple.com/a/cartoon) (literal cartoon, excellent)
+- **"HTTP Crash Course"** - Traversy Media on YouTube
+- **Wireshark** - tool that lets you SEE packets traveling on your network
 
 ---
 ## Phase 0.1 Complete!
 **You now understand:**
-
 - What the internet physically is
 - How data travels (packets)
 - What IP addresses and ports are
@@ -545,3 +543,5 @@ These are NOT required right now, but bookmark for later:
 - How HTTP/HTTPS works
 - The client-server model
 - HTTP methods and status codes
+
+---

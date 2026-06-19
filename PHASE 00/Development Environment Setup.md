@@ -968,22 +968,18 @@ deactivate
 
 ---
 ## How This Connects to Your Future Work
-
-```
 Every single project you build will:
-  □ Have a virtual environment
-  □ Use Poetry or pip for packages
-  □ Have a .env file for secrets
-  □ Have .gitignore protecting secrets
-  □ Be opened and edited in VS Code
-  □ Be run from the terminal
+- Have a virtual environment
+- Use Poetry or pip for packages
+- Have a .env file for secrets
+- Have `.gitignore` protecting secrets
+- Be opened and edited in VS Code
+- Be run from the terminal
 
 This phase 0.2 setup is something you'll do
 on day 1 of every new job, every new project,
 every new server you configure.
-
 Getting this right NOW saves you pain FOREVER.
-```
 
 ---
 ## Phase 0.2 Complete!
