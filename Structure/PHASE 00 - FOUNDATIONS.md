@@ -1,18 +1,16 @@
 Down below, everything is connected. Don't forget to explore "Open Graph View".
 
-# PHASE 00 / FOUNDATIONS
+# PHASE 00 / PREREQUSITE
 Follow the structure down.
 *Duration: 1-4 weeks*
 
 1. [[Prerequisite Briefing]]
-
 
 ---
 #### Computer Science Fundamentals
 1. [[How the Internet Works]]
 2. [[Development Environment Setup]]
 3. [[Git & Version Control]]
-
 
 ---
 

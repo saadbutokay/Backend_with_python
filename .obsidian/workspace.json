@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "7e522ae47f2fdfbc",
+        "id": "91eceeda99548a9f",
         "type": "tabs",
         "children": [
           {
-            "id": "2119d05bdc0c59cb",
+            "id": "ed741ffaa3b41414",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Structure/PHASE 03 - DATABASES.md",
+                "file": "Structure/PHASE 00 - FOUNDATIONS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PHASE 03 - DATABASES"
-            }
-          },
-          {
-            "id": "cb22a309ce83ff3a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PHASE 01/Python Internals.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Python Internals"
+              "title": "PHASE 00 - FOUNDATIONS"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -127,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PHASE 01/Python Internals.md",
+                "file": "Structure/PHASE 00 - FOUNDATIONS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +122,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Python Internals"
+              "title": "Backlinks for PHASE 00 - FOUNDATIONS"
             }
           },
           {
@@ -215,43 +200,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "cb22a309ce83ff3a",
+  "active": "ed741ffaa3b41414",
   "lastOpenFiles": [
-    "PHASE 01/Advanced Python.md",
-    "PHASE 01/Python Internals.md",
-    "PHASE 01/OOP.md",
-    "PHASE 01/Functions & Scope.md",
-    "Structure/PHASE 03 - DATABASES.md",
-    "PHASE 03/Phase 3.4 — Database Tools.md",
-    "ReadME.md",
-    "PHASE 03/Phase 3.3 — NoSQL Databases.md",
-    "PHASE 01/Virtual Environments.md",
-    "PHASE 03/Phase 3.2 — Python + Database.md",
-    "Structure/PHASE 02 - DSA.md",
-    "Structure/PHASE 01 - PYTHON CORE.md",
-    "Structure/PHASE 00 - FOUNDATIONS.md",
     "Journal.md",
-    "PHASE 03/Phase 3.1 — Relational Databases &amp; PostgreSQL.md",
+    "ReadME.md",
+    "Structure/PHASE 07 - DevOps, DEPLOYMENT & INFRASTRUCTURE.md",
+    "Structure/PHASE 06 - TESTING & CODE QUALITY.md",
+    "Structure/PHASE 05 - ASYNC PROGRAMMING & CONCURRENCY.md",
+    "PHASE 05/Phase 5.1 — Asyncio Fundamentals.md",
+    "Structure/PHASE 04 - WEB FRAMEWORKS.md",
+    "Structure/PHASE 01 - PYTHON CORE.md",
+    "PHASE 07/Phase 7.6 — Monitoring, Logging & Observability.md",
+    "PHASE 07/Phase 7.5 — Kubernetes.md",
+    "PHASE 07/Phase 7.4 — Cloud Services (AWS).md",
+    "PHASE 07/Phase 7.3 — CI-CD (Continuous Integration - Continuous Deployment).md",
+    "PHASE 07/Phase 7.2 — Docker & Containerization.md",
+    "PHASE 04/Phase 4.1 — HTTP & API Fundamentals.md",
+    "PHASE 04/Phase 4.2 — FastAPI.md",
+    "PHASE 04/Phase 4.3 — Django & Django REST Framework.md",
+    "PHASE 04/Phase 4.4 — Flask.md",
+    "PHASE 04/Phase 4.5 — Project Structure & Patterns.md",
+    "PHASE 04",
+    "PHASE 05/Phase 5.2 — Async Database Operations.md",
+    "PHASE 05/Phase 5.3 — Threading vs Multiprocessing vs Async.md",
+    "PHASE 05/Phase 5.4 — Async HTTP Clients.md",
+    "PHASE 05",
+    "PHASE 06/Phase 6.1 — pytest Fundamentals.md",
+    "PHASE 06/Phase 6.2 — Unit Testing & Mocking.md",
+    "PHASE 06/Phase 6.3 — Integration Testing.md",
+    "PHASE 06/Phase 6.4 — Test Coverage, CICD Pipeline & Load Testing.md",
+    "PHASE 06",
+    "PHASE 07/Phase 7.1 — Linux & Server Administration.md",
+    "PHASE 07",
     "PHASE 03",
-    "PHASE 02/Phase 2.3 — Python-Specific Efficiency.md",
     "PHASE 02/Unconfirmed 713937.crdownload",
-    "PHASE 02/Phase 2.2 — Algorithms.md",
     "PHASE 02/Unconfirmed 830338.crdownload",
-    "PHASE 02/Phase 2.1 — Data Structures.md",
     "PHASE 02/Unconfirmed 551283.crdownload",
     "PHASE 02",
-    "PHASE 01/Python Basics.md",
-    "PHASE 00/Prerequisite Briefing.md",
-    "PHASE 00/How the Internet Works.md",
-    "PHASE 00/Git & Version Control.md",
-    "PHASE 00/Development Environment Setup.md",
-    "PHASE 01/Unconfirmed 385060.crdownload",
-    "PHASE 01/Unconfirmed 101007.crdownload",
-    "PHASE 01",
-    "Structure/PHASE 01.md",
-    "PHASE 00",
-    "phase-1/Environment Tooling.md",
-    "phase-1/1.9-iterators-generators-fp.md",
-    "phase-1"
+    "PHASE 01/Unconfirmed 385060.crdownload"
   ]
 }
