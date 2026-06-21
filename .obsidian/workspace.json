@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "91eceeda99548a9f",
+        "id": "e0a8c0f1225963b8",
         "type": "tabs",
         "children": [
           {
-            "id": "ed741ffaa3b41414",
+            "id": "a8ddf0e07bd02b40",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Structure/PHASE 00 - FOUNDATIONS.md",
+                "file": "ReadME.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PHASE 00 - FOUNDATIONS"
+              "title": "ReadME"
+            }
+          },
+          {
+            "id": "ef8088fbaae3b83f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Phases/PHASE 00/Git & Version Control.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Git & Version Control"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -112,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Structure/PHASE 00 - FOUNDATIONS.md",
+                "file": "Phases/PHASE 00/Git & Version Control.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +137,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for PHASE 00 - FOUNDATIONS"
+              "title": "Backlinks for Git & Version Control"
             }
           },
           {
@@ -200,43 +215,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "ed741ffaa3b41414",
+  "active": "ef8088fbaae3b83f",
   "lastOpenFiles": [
+    "Navigation/PHASE 00 - FOUNDATIONS.md",
     "Journal.md",
+    "Phases/PHASE 00/Git & Version Control.md",
+    "Projects/test_poetry/README - test_poetry.md",
     "ReadME.md",
-    "Structure/PHASE 07 - DevOps, DEPLOYMENT & INFRASTRUCTURE.md",
-    "Structure/PHASE 06 - TESTING & CODE QUALITY.md",
-    "Structure/PHASE 05 - ASYNC PROGRAMMING & CONCURRENCY.md",
-    "PHASE 05/Phase 5.1 — Asyncio Fundamentals.md",
-    "Structure/PHASE 04 - WEB FRAMEWORKS.md",
-    "Structure/PHASE 01 - PYTHON CORE.md",
-    "PHASE 07/Phase 7.6 — Monitoring, Logging & Observability.md",
-    "PHASE 07/Phase 7.5 — Kubernetes.md",
-    "PHASE 07/Phase 7.4 — Cloud Services (AWS).md",
-    "PHASE 07/Phase 7.3 — CI-CD (Continuous Integration - Continuous Deployment).md",
-    "PHASE 07/Phase 7.2 — Docker & Containerization.md",
-    "PHASE 04/Phase 4.1 — HTTP & API Fundamentals.md",
-    "PHASE 04/Phase 4.2 — FastAPI.md",
-    "PHASE 04/Phase 4.3 — Django & Django REST Framework.md",
-    "PHASE 04/Phase 4.4 — Flask.md",
-    "PHASE 04/Phase 4.5 — Project Structure & Patterns.md",
-    "PHASE 04",
-    "PHASE 05/Phase 5.2 — Async Database Operations.md",
-    "PHASE 05/Phase 5.3 — Threading vs Multiprocessing vs Async.md",
-    "PHASE 05/Phase 5.4 — Async HTTP Clients.md",
-    "PHASE 05",
-    "PHASE 06/Phase 6.1 — pytest Fundamentals.md",
-    "PHASE 06/Phase 6.2 — Unit Testing & Mocking.md",
-    "PHASE 06/Phase 6.3 — Integration Testing.md",
-    "PHASE 06/Phase 6.4 — Test Coverage, CICD Pipeline & Load Testing.md",
-    "PHASE 06",
-    "PHASE 07/Phase 7.1 — Linux & Server Administration.md",
-    "PHASE 07",
-    "PHASE 03",
-    "PHASE 02/Unconfirmed 713937.crdownload",
-    "PHASE 02/Unconfirmed 830338.crdownload",
-    "PHASE 02/Unconfirmed 551283.crdownload",
-    "PHASE 02",
-    "PHASE 01/Unconfirmed 385060.crdownload"
+    "Navigation/PROJECT NAVIGATION.md",
+    "Navigation/PHASE 06 - TESTING & CODE QUALITY.md",
+    "Phases/PHASE 00/Development Environment Setup.md",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/pip/_vendor/idna/LICENSE.md",
+    "Projects/test_venv/venv/lib/python3.14/site-packages/idna-3.18.dist-info/licenses/LICENSE.md",
+    "Notes/Terminal.md",
+    "Projects/python_venv/venv/lib/python3.14/site-packages/idna-3.18.dist-info/licenses/LICENSE.md",
+    "Navigation/PHASE 05 - ASYNC PROGRAMMING & CONCURRENCY.md",
+    "Projects/python_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "Projects/python_venv/venv/lib/python3.14/site-packages/pip/_vendor/idna/LICENSE.md",
+    "Projects/Phase 00 - Projects/python_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "Projects/Phase 00 - Projects/python_venv/venv/lib/python3.14/site-packages/pip/_vendor/idna/LICENSE.md",
+    "Projects/Phase 00 - Projects/python_venv/venv/lib/python3.14/site-packages/idna-3.18.dist-info/licenses/LICENSE.md",
+    "Projects/Phase 00 - Projects/test_poetry/README.md",
+    "Projects/Phase 0 - Projects/python_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "Projects/Phase 0 - Projects/python_venv/venv/lib/python3.14/site-packages/pip/_vendor/idna/LICENSE.md",
+    "Projects/Phase 0 - Projects/python_venv/venv/lib/python3.14/site-packages/idna-3.18.dist-info/licenses/LICENSE.md",
+    "Projects/Phase 0 - Projects/test_poetry/README.md",
+    "test_poetry/README.md",
+    "python_venv/venv/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md"
   ]
 }

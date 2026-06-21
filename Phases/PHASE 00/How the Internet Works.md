@@ -31,7 +31,7 @@ Physical reality of the internet:
 │      │ (cable running to street)                    │
 │      │                                              │
 │   Your ISP's building                               │
-│   (Internet Service Provider — Airtel, Robi, etc.)  │
+│   (Internet Service Provider - Airtel, Robi, etc.)  │
 │      │                                              │
 │      │ (fiber optic cables, sometimes               │
 │      │  UNDERSEA cables connecting continents)      │
@@ -87,26 +87,25 @@ Internet:         "142.250.80.46"
 ```
 
 ### IPv4 vs IPv6
-```
-IPv4 (old):   142.250.80.46
-              4 numbers, 0-255 each
-              Only ~4 billion possible addresses
-              Running out!
 
-IPv6 (new):   2001:0db8:85a3:0000:0000:8a2e:0370:7334
-              Much longer
-              340 trillion trillion trillion addresses
-              (one for every grain of sand on Earth × 1000)
-```
+**IPv4 (old):**
+- `142.250.80.46`
+- 4 numbers, 0-255 each
+- Only ~4 billion possible addresses
+- Running out!
+
+**IPv6 (new):**
+- `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+- Much longer
+- 340 trillion trillion trillion addresses (one for every grain of sand on Earth × 1000)
 
 ---
 ## 4. Ports - Doors Into a Computer
 An IP address gets you to the right computer.  
 A **port** gets you to the right program ON that computer.
 
-```
 Think of it like an apartment building:
-
+```
 IP Address = The building address
             "142.250.80.46"
 
@@ -152,10 +151,9 @@ DNS says:     "google.com = 142.250.80.46"
 Browser goes: connects to 142.250.80.46
 ```
 
-### How DNS lookup works step by step:
+### How DNS lookup works?
+You type `google.com` and press Enter:
 ```
-You type google.com and press Enter
-
 Step 1: Check your computer's memory (DNS cache)
         "Have I looked up google.com before?"
         If yes → use stored IP. Done.
@@ -186,19 +184,12 @@ Step 7: Your browser now connects to 142.250.80.46
         The IP is cached so next time steps 4-6 are skipped
 ```
 
-### Visual:
-```
-Browser → Cache? → Router → ISP DNS → Root DNS → .com DNS → google DNS
-                                                                  ↓
-Browser ←────────────────────────────────── 142.250.80.46 ←──────┘
-```
-
 ---
 ## 6. Protocols - The Rules of Communication
 A **protocol** is just an agreed set of rules.
 
-```
 Real world example:
+```
 When you call someone:
   - You say "Hello"
   - They say "Hello, who is this?"
@@ -209,14 +200,13 @@ That's a protocol. Both sides know the rules.
 ```
 
 ### TCP (Transmission Control Protocol)
-```
 TCP is like sending a certified letter.
-
 - Guarantees delivery
 - Guarantees correct order
 - Slower (because of confirmations)
 - Used for: websites, emails, databases, APIs
 
+```
 TCP conversation:
   You:    "SYN" (I want to connect)
   Server: "SYN-ACK" (OK, I acknowledge)
@@ -226,35 +216,23 @@ TCP conversation:
 ```
 
 ### UDP (User Datagram Protocol)
-```
 UDP is like shouting across a room.
-
-- Fire and forget — no delivery guarantee
+- Fire and forget - no delivery guarantee
 - Faster (no confirmation overhead)
-- Used for: video calls, gaming, live streaming
-  (better to skip a frame than to pause and retry)
-```
+- Used for: video calls, gaming, live streaming (better to skip a frame than to pause and retry)
 
 ### HTTP (HyperText Transfer Protocol)
-```
-The language browsers and servers use to talk.
-Built ON TOP of TCP.
+The language browsers and servers use to talk. Built ON TOP(Technical Office Protocol) of TCP.
 
-You'll use this EVERY DAY as a backend engineer.
-We'll cover this deeply in a moment.
-```
+You'll use this EVERY DAY as a backend engineer. We'll cover this deeply in a moment.
 
 ### HTTPS
-```
 HTTP + encryption (TLS/SSL)
-Everything is scrambled so nobody can intercept it.
-The "S" = Secure
-```
+Everything is scrambled so nobody can intercept it. The "S" means **Secure**.
 
 ---
 ## 7. Client-Server Architecture
 This is THE fundamental model of backend development.
-
 ```
 CLIENT                          SERVER
 ──────                          ──────
@@ -273,7 +251,7 @@ Waits for response       ←      Processes & responds
 ### Concrete example:
 ```
 Instagram on your phone (CLIENT)
-    │
+    ↑
     │  "Give me the latest 20 posts for user #4521"
     │  ──────────────────────────────────────────►
     │
@@ -285,21 +263,18 @@ Instagram on your phone (CLIENT)
     │
     │  Here are 20 posts (JSON data)
     │  ◄──────────────────────────────────────────
-    │
+    ↓
 Phone displays the posts
 ```
 
 ---
-
 ## 8. HTTP & HTTPS - The Language of the Web
 As a backend engineer, HTTP is your native language.
-
 ### HTTP Request Structure
-```
 Every request has:
-
-METHOD   PATH              VERSION
-  │       │                  │
+```
+METHOD   PATH            VERSION
+  │       │                 │
 GET /users/123/posts  HTTP/1.1
 Host: api.instagram.com
 Authorization: Bearer eyJhbGc...
@@ -307,8 +282,10 @@ Content-Type: application/json
                 │
               HEADERS
               (metadata about the request)
+```
 
-[BODY — optional, used for POST/PUT]
+```
+[BODY - optional, used for POST/PUT]
 {
   "title": "My new post",
   "content": "Hello world"
@@ -317,13 +294,13 @@ Content-Type: application/json
 
 ### HTTP Methods (Verbs)
 
-| Method | Meaning | Example Use |
-|--------|---------|-------------|
-| GET | "Give me data" | Fetch posts, get user profile |
-| POST | "Create something" | Create new post, register user |
-| PUT | "Replace something" | Update entire profile |
-| PATCH | "Update part of something" | Change just the username |
-| DELETE | "Delete something" | Delete a post |
+| Method | Meaning                    | Example Use                    |
+| ------ | -------------------------- | ------------------------------ |
+| GET    | "Give me data"             | Fetch posts, get user profile  |
+| POST   | "Create something"         | Create new post, register user |
+| PUT    | "Replace something"        | Update entire profile          |
+| PATCH  | "Update part of something" | Change just the username       |
+| DELETE | "Delete something"         | Delete a post                  |
 
 ### HTTP Response Structure
 ```
@@ -334,7 +311,9 @@ Content-Type: application/json
 Content-Length: 348
      │
   HEADERS
+```
 
+```
 [BODY]
 {
   "id": 123,
@@ -346,30 +325,31 @@ Content-Length: 348
 ### HTTP Status Codes - MEMORIZE THESE
 **2xx - SUCCESS**
 
-| Code | Name | Meaning |
-|------|------|---------|
-| 200 | OK | Request worked perfectly |
-| 201 | Created | New resource was created |
-| 204 | No Content | Worked, but nothing to return |
+| Code | Name       | Meaning                       |
+| ---- | ---------- | ----------------------------- |
+| 200  | OK         | Request worked perfectly      |
+| 201  | Created    | New resource was created      |
+| 204  | No Content | Worked, but nothing to return |
+|      |            |                               |
 
 **3xx - REDIRECTS**
 
-| Code | Name | Meaning |
-|------|------|---------|
-| 301 | Moved Permanently | This URL moved forever |
-| 302 | Found | Temporary redirect |
+| Code | Name              | Meaning                |
+| ---- | ----------------- | ---------------------- |
+| 301  | Moved Permanently | This URL moved forever |
+| 302  | Found             | Temporary redirect     |
 
 **4xx - CLIENT ERRORS (YOU did something wrong)**
 
-| Code | Name | Meaning |
-|------|------|---------|
-| 400 | Bad Request | Your request is malformed |
-| 401 | Unauthorized | You're not logged in |
-| 403 | Forbidden | Logged in but no permission |
-| 404 | Not Found | Resource doesn't exist |
-| 405 | Method Not Allowed | Wrong HTTP method |
-| 422 | Unprocessable Entity | Data validation failed |
-| 429 | Too Many Requests | You're being rate limited |
+| Code | Name                 | Meaning                     |
+| ---- | -------------------- | --------------------------- |
+| 400  | Bad Request          | Your request is malformed   |
+| 401  | Unauthorized         | You're not logged in        |
+| 403  | Forbidden            | Logged in but no permission |
+| 404  | Not Found            | Resource doesn't exist      |
+| 405  | Method Not Allowed   | Wrong HTTP method           |
+| 422  | Unprocessable Entity | Data validation failed      |
+| 429  | Too Many Requests    | You're being rate limited   |
 
 **5xx - SERVER ERRORS (SERVER did something wrong)**
 
@@ -382,12 +362,16 @@ Content-Length: 348
 
 ---
 ## 9. TLS/SSL - How HTTPS Works
+HTTPS is simply the secure, encrypted version of HTTP. It achieves this security by layering **TLS (Transport Layer Security)** or its deprecated predecessor, **SSL (Secure Sockets Layer)** on top of regular HTTP. This combination prevents unauthorized interception of sensitive data, like passwords or payment information, while it travels across a network.
+
 ```
 Without HTTPS (HTTP):
   Your data: "password=mysecret123"
   Travels across internet as plain text
   Anyone can read it (coffee shop WiFi attack)
+```
 
+```
 With HTTPS:
   Your data: "x7Kp9#mQ2vL..." (encrypted)
   Even if intercepted, unreadable without the key
@@ -403,7 +387,6 @@ With HTTPS:
 ---
 ## 10. How It ALL Comes Together
 Let's trace **exactly** what happens when you open `https://twitter.com/home`:
-
 ```
 1. YOU type https://twitter.com in browser, press Enter
 
@@ -500,10 +483,9 @@ Before we move on, answer these in your head (or out loud):
 ---
 ## How This Connects to YOUR Future Work
 As a Python backend engineer, you will:
-
 1. Build servers that LISTEN on specific ports
   (your FastAPI app runs on port 8000)
-  
+
 2. Handle HTTP requests (GET, POST, PUT, DELETE)
   (every API endpoint you write)
 

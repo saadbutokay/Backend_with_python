@@ -8,9 +8,8 @@ Welcome to the Backend Engineering with Python! This repository contains notes, 
 ## What to do?
 1. Download Obsidian for better studying. Link for Obsidian: https://obsidian.md
 2. For Obsidian plugins, go to settings, community plugins and download `code styler`. This is a must.
-3. Go to Structure folder to find [[PHASE 00 - FOUNDATIONS]], [[PHASE 01 - PYTHON CORE]] etc. to understand the layout and to find what is where.
-4. Look at Projects folder to find the related projects.
-5. You can read [[Journal]] to read my thoughts, concepts, fun facts etc. (Totally Optional)
+3. Go to Navigation folder to find [[PHASE 00 - FOUNDATIONS]], [[PHASE 01 - PYTHON CORE]] etc. to understand the layout and to find what is where.
+4. You can read [[Journal]] to read my thoughts, concepts, fun facts etc. (Totally Optional)
 
 Have fun.
 

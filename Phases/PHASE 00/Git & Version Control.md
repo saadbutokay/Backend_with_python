@@ -1,5 +1,4 @@
 Imagine writing a 10,000 line codebase and then:
-
 ```
 Scenario 1: You change something. It breaks everything.
             You can't remember what you changed.
@@ -22,7 +21,7 @@ Git is a system that:
   - Tracks WHO changed WHAT and WHEN
 
 ---
-## 1. Core Concepts - Understand These First
+## 1. Core Concepts
 Before commands, understand the mental model.
 ### The Three States of Git
 ```

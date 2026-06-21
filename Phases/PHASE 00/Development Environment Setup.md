@@ -1,9 +1,8 @@
 Before a carpenter builds furniture, they set up their workshop.  
 Before you write Python, you set up your environment.
 
+**A *development environment* is:**
 ```
-A "development environment" is:
-
 Your computer
     │
     ├── Python (the language interpreter)
@@ -99,22 +98,21 @@ Or set up an alias (we'll handle this automatically with venv).
 
 ---
 ## 2. VS Code - Your Code Editor
-
+Visual Studio Code (commonly known as VS Code) is a free, lightweight, and highly popular code editor developed by Microsoft.
 ### Why VS Code?
-```
 Options you might have heard of:
+```
 ┌─────────────────┬──────────────────────────────────────┐
 │ Editor          │ Verdict                              │
 ├─────────────────┼──────────────────────────────────────┤
-│ VS Code         │ ✅ Best for beginners + professionals │
-│ PyCharm         │ ✅ Great but heavy, paid for full ver │
-│ Vim/NeoVim      │ ⚡ Powerful but steep learning curve  │
-│ Jupyter         │ 📊 Good for data science, not backend │
-│ Notepad         │ ❌ Please don't                       │
+│ VS Code         │  Best for beginners + professionals  │
+│ PyCharm         │  Great but heavy, paid for full ver  │
+│ Vim/NeoVim      │  Powerful but steep learning curve   │
+│ Jupyter         │  Good for data science, not backend  │
+│ Notepad         │  Please don't                        │
 └─────────────────┴──────────────────────────────────────┘
-
-We use VS Code. It's free, fast, and used by millions.
 ```
+We use VS Code. It's free, fast, and used by millions.
 
 ### Installing VS Code
 1. Go to [code.visualstudio.com](https://code.visualstudio.com)
@@ -206,30 +204,28 @@ autoSave            → Saves your file automatically
 
 ### VS Code Keyboard Shortcuts You'll Use Daily
 
-| Action | Windows/Linux | Mac |
-|--------|-------------|-----|
-| Open terminal | Ctrl+\` | Cmd+\` |
-| Open file | Ctrl+P | Cmd+P |
-| Command palette | Ctrl+Shift+P | Cmd+Shift+P |
-| Save file | Ctrl+S | Cmd+S |
-| Find in file | Ctrl+F | Cmd+F |
-| Find in ALL files | Ctrl+Shift+F | Cmd+Shift+F |
-| Comment/uncomment line | Ctrl+/ | Cmd+/ |
-| Duplicate line | Shift+Alt+↓ | Shift+Option+↓ |
-| Move line up/down | Alt+↑/↓ | Option+↑/↓ |
-| Multiple cursors | Ctrl+Click | Cmd+Click |
-| Select all occurrences | Ctrl+Shift+L | Cmd+Shift+L |
-| Format document | Shift+Alt+F | Shift+Option+F |
-| Go to definition | F12 | F12 |
-| Run Python file | F5 | F5 |
-| Split editor | Ctrl+\ | Cmd+\ |
+| Action                 | Windows/Linux | Mac            |
+| ---------------------- | ------------- | -------------- |
+| Open terminal          | Ctrl+\`       | Cmd+\`         |
+| Open file              | Ctrl+P        | Cmd+P          |
+| Command palette        | Ctrl+Shift+P  | Cmd+Shift+P    |
+| Save file              | Ctrl+S        | Cmd+S          |
+| Find in file           | Ctrl+F        | Cmd+F          |
+| Find in ALL files      | Ctrl+Shift+F  | Cmd+Shift+F    |
+| Comment/uncomment line | Ctrl+/        | Cmd+/          |
+| Duplicate line         | Shift+Alt+↓   | Shift+Option+↓ |
+| Move line up/down      | Alt+↑/↓       | Option+↑/↓     |
+| Multiple cursors       | Ctrl+Click    | Cmd+Click      |
+| Select all occurrences | Ctrl+Shift+L  | Cmd+Shift+L    |
+| Format document        | Shift+Alt+F   | Shift+Option+F |
+| Go to definition       | F12           | F12            |
+| Run Python file        | F5            | F5             |
+| Split editor           | Ctrl+\        | Cmd+\          |
 
 **Learn these. They will save you hours every week.**
 
 ---
 ## 3. The Terminal - Your Most Important Tool
-
-### What is the Terminal?
 The terminal is a text-based way to control your computer.
 ```
 Instead of:                    You type:
@@ -237,8 +233,7 @@ Click folder → click file  →   cd documents/myproject
 Double click program       →   python3 main.py
 Create new folder          →   mkdir new_folder
 ```
-As a backend engineer, you'll live in the terminal.  
-Servers don't have graphical interfaces. Just terminal.
+As a backend engineer, you'll live in the terminal. Servers don't have graphical interfaces. Just terminal.
 
 ### Opening the Terminal
 ```
@@ -247,12 +242,16 @@ Windows:
   - Or install Windows Terminal (better, from Microsoft Store)
   - Or use Git Bash (installs with Git)
   - Best: Use VS Code's built-in terminal (Ctrl+`)
+```
 
+```
 Mac:
   - Search "Terminal" in Spotlight (Cmd+Space)
   - Or install iTerm2 (better terminal app)
   - Or use VS Code's built-in terminal (Cmd+`)
+```
 
+```
 Linux:
   - Ctrl+Alt+T on most distros
   - Or use VS Code's built-in terminal
@@ -350,10 +349,9 @@ This is what you'll use 90% of the time.
 ```
 
 ---
-## 4. Virtual Environments - The Most Important Concept Here
-
+## 4. Virtual Environments
+The Most Important Concept Here.
 ### The Problem Without Virtual Environments
-
 Imagine this:
 ```
 You have 2 projects:
@@ -390,11 +388,9 @@ No conflicts. Each project lives in its own world.
 ```
 
 **Think of virtual environments as:**
-```
-Each project gets its own clean apartment.
-They don't share furniture (packages).
-They don't interfere with each other.
-```
+- Each project gets its own clean apartment.
+- They don't share furniture (packages).
+- They don't interfere with each other.
 
 ### Creating Your First Virtual Environment
 **Step 1: Create a project folder**
@@ -412,7 +408,7 @@ cd my_first_project
 **Step 2: Create a virtual environment**
 ```bash
 # This creates a folder called "venv" inside your project
-python3 -m venv venv
+python3 -m venv env #mostly use env
 
 # What this does:
 # python3         → use Python 3
@@ -421,14 +417,13 @@ python3 -m venv venv
 ```
 
 You'll see a new folder called `venv/` appear:
-
-```
+```python
 my_first_project/
 └── venv/
-    ├── bin/          (Mac/Linux) — contains Python, pip
-    ├── Scripts/      (Windows) — contains Python, pip
-    ├── lib/          — where packages get installed
-    └── pyvenv.cfg    — config file
+    ├── bin/          #( Mac/Linux) - contains Python, pip
+    ├── Scripts/      # (Windows) - contains Python, pip
+    ├── lib/          # where packages get installed
+    └── pyvenv.cfg    # config file
 ```
 
 **Step 3: Activate the virtual environment**
@@ -488,14 +483,9 @@ Rule 5: Use venv/ as the folder name
 
 ---
 ## 5. pip & Package Management
-
-### What is pip?
 pip = Python's package installer, like an app store, but for Python libraries.
-```
-Instead of manually downloading code,
-you just say: pip install requests
-And pip downloads and installs it automatically.
-```
+
+Instead of manually downloading code, you just say: pip install requests. And pip downloads and installs it automatically.
 
 ### Basic pip Commands
 ```bash
@@ -527,7 +517,8 @@ pip show requests
 pip search requests
 ```
 
-### `requirements.txt` - Sharing Your Dependencies
+### `requirements.txt`
+Sharing Your Dependencies.
 
 **The problem:**
 ```
@@ -542,8 +533,8 @@ How do they know which packages to install?
 pip freeze > requirements.txt
 ```
 
-This creates a file like:
-```
+**This creates a file like:**
+```java
 # requirements.txt
 requests==2.31.0
 fastapi==0.104.1
@@ -557,9 +548,10 @@ uvicorn==0.24.0
 pip install -r requirements.txt
 ```
 
-### `.env` Files - Keeping Secrets Safe
+### `.env` Files
+Keeping Secrets Safe.
 
-Your app will have secrets:
+**Your app will have secrets:**
 ```
 Database password: "super_secret_password"
 API key: "sk-abc123..."
@@ -568,7 +560,7 @@ Secret key: "random_string_for_jwt"
 
 **NEVER put these directly in your code:**
 ```python
-# ❌ WRONG — never do this
+# ❌ WRONG — never do ths
 DATABASE_URL = "postgresql://admin:super_secret_password@localhost/mydb"
 API_KEY = "sk-abc123..."
 
@@ -605,34 +597,30 @@ print(database_url)  # postgresql://admin:super_secret_password@...
 ```
 
 **Add `.env` to `.gitignore` so it never gets committed:**
-
 ```bash
 # .gitignore
 venv/
 .env
-__pycache__/
-*.pyc
 ```
+
+Watch [this](https://youtu.be/Y21OR1OPC9A) if you don't understand.
 
 ---
-## 6. Poetry - Modern Dependency Management
-
+## 6. Poetry
+Modern Dependency Management.
 ### Why Poetry When We Have pip?
+pip + `requirements.txt` problems:
 ```
-pip + requirements.txt problems:
   ❌ No separation of dev vs production dependencies
   ❌ requirements.txt can get out of sync
   ❌ No dependency conflict resolution
   ❌ No built-in virtual env management
   ❌ Versions can be loose/unpredictable
-
-Poetry solves ALL of this.
-Industry is moving toward Poetry.
-Many companies use it.
 ```
+Poetry solves ALL of this. Industry is moving toward Poetry. Many companies use it.
 
-```
 Poetry advantages:
+```
   ✅ Automatic virtual environment management
   ✅ Separates dev and production dependencies
   ✅ Lock file (exact reproducible installs)
@@ -646,24 +634,41 @@ Poetry advantages:
 # Mac/Linux:
 curl -sSL https://install.python-poetry.org | python3 -
 
+# Apply the Changes - Mac
+source ~/.zshrc
+```
+
+```bash
 # Windows (PowerShell):
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
 
+```bash
 # Verify installation:
 poetry --version
 # Output: Poetry (version 1.7.x)
 ```
 
-### Using Poetry - A Complete Walkthrough
+### Using Poetry
 
 **Start a new project:**
 ```bash
 # Create new project
 poetry new my_backend_project
+```
 
+**OR use `poetry` in an existing project:**
+```bash
+cd my_existing_project
+poetry init
+# Poetry asks you questions, creates pyproject.toml
+```
+
+**The structure `poetry` creates:**
+```bash
 # Structure created:
 my_backend_project/
-├── pyproject.toml     ← the main config file (replaces requirements.txt)
+├── pyproject.toml   ← the main config file (replaces requirements.txt)
 ├── README.md
 ├── my_backend_project/
 │   └── __init__.py
@@ -671,14 +676,9 @@ my_backend_project/
     └── __init__.py
 ```
 
-**OR use Poetry in an existing project:**
-```bash
-cd my_existing_project
-poetry init
-# Poetry asks you questions, creates pyproject.toml
-```
-
 **The `pyproject.toml` file:**
+The file in **Poetry** serves as the single, centralized configuration file used to **manage project dependencies, declare metadata, and configure build environments**. It replaces legacy configuration files like `setup.py`, `requirements.txt`, and `setup.cfg` into a standardized, modern format.
+
 ```toml
 [tool.poetry]
 name = "my-backend-project"
@@ -697,6 +697,17 @@ black = "^23.0.0"
 ruff = "^0.1.0"
 ```
 
+**Highly Recommended Mac Optimization:**
+By default, [Poetry Documentation](https://python-poetry.org/docs/configuration/) states that environments are created globally in your system's cache folder (`~/Library/Caches/pypoetry`).
+
+To keep your project clean and make it easier for code editors like **VS Code** or **PyCharm** to find your Python interpreter, run this command **before** creating your environment:
+```bash
+poetry config virtualenvs.in-project true
+```
+This forces Poetry to build the environment right inside your project directory in a hidden folder called `.venv`.
+
+Or you can just create a virtual environment with [[#`.env` Files|.env]] method.
+
 **Installing packages with Poetry:**
 ```bash
 # Add a production dependency
@@ -710,7 +721,9 @@ poetry add --group dev pytest
 
 # Remove a package
 poetry remove requests
+```
 
+```bash
 # Install all dependencies (like pip install -r requirements.txt)
 poetry install
 
@@ -718,18 +731,24 @@ poetry install
 poetry update
 ```
 
-**Running your code with Poetry:**
 ```bash
 # Activate Poetry's virtual environment
-poetry shell
-
+source <(poetry env activate)
 # Now you're inside the venv
+```
+
+**Running your code with Poetry:**
+```bash
 # Run Python
-python main.py
+python main.py # copy the code below
 
 # OR run without activating
 poetry run python main.py
 poetry run pytest
+```
+
+```python title:main.py
+print("Hello World!") # copy this to your main.py
 ```
 
 **The lock file:**
@@ -739,20 +758,30 @@ poetry run pytest
 # Commit this to Git — teammates get identical environments
 
 my_project/
+├── poetry.toml.      ← commit this
 ├── pyproject.toml    ← commit this
-├── poetry.lock       ← commit this
-├── .env              ← NEVER commit this
-└── venv/             ← NEVER commit this
+└── poetry.lock       ← commit this
 ```
 
-### pip vs Poetry - When to Use Which?
+### pip vs Poetry
+| Feature                    | Pip                                          | Poetry                                                 |
+| -------------------------- | -------------------------------------------- | ------------------------------------------------------ |
+| **Primary Role**           | Package Installer                            | Project & Dependency Manager                           |
+| **Virtual Environments**   | None; requires external tools (e.g., `venv`) | Automatic; creates and manages them for you            |
+| **Dependency Resolution**  | Minimal; can lead to version conflicts       | Advanced; auto-checks compatibility and locks versions |
+| **Configuration File**     | Plain text `requirements.txt`                | Structured `pyproject.toml`                            |
+| **Packaging & Publishing** | Not supported directly                       | Supported out-of-the-box                               |
+
+When to Use Which?
 ```
 Use pip + venv when:
   - Learning/personal projects
   - Quick scripts
   - The project already uses requirements.txt
   - Working on a team that uses pip
+```
 
+```
 Use Poetry when:
   - New professional projects
   - Team projects (ensures everyone has same deps)
@@ -762,9 +791,8 @@ Use Poetry when:
 **Reality:** You'll encounter BOTH in jobs. Know both. We'll primarily use Poetry going forward.
 
 ---
-## 7. How to Read Official Documentation
-
-**This Skill is More Valuable Than Any Tutorial**
+## 7. How to Read Official Documentation?
+This Skill is More Valuable Than Any Tutorial.
 ```
 Tutorials get outdated.
 Documentation is always current.
@@ -819,7 +847,7 @@ Step 6: Check the version
         Python 3.12 docs ≠ Python 3.8 docs
 ```
 
-### Practical Exercise - Right Now
+### Practical Exercise
 1. Go to [docs.python.org/3/](https://docs.python.org/3/)
 2. Find the documentation for the "list" type
 3. Find what the `.append()` method does
@@ -829,18 +857,17 @@ Step 6: Check the version
 **This is a skill you practice, not learn once.**
 
 ---
-## Your Complete Project Structure Going Forward
-
+## Complete Project Structure
 Every project you build should look like this:
 ```python title:project_structure.py
 my_project/
 │
-├── .env                    ← secrets (NEVER commit)
-├── .env.example            ← template without real values (commit this)
-├── .gitignore              ← tells git what to ignore
-├── pyproject.toml          ← Poetry config
-├── poetry.lock             ← locked dependencies (commit)
-├── README.md               ← project description
+├── .env              ← secrets (NEVER commit)
+├── .env.example      ← template without real values (commit this)
+├── .gitignore        ← tells git what to ignore
+├── pyproject.toml    ← Poetry config
+├── poetry.lock       ← locked dependencies (commit)
+├── README.md         ← project description
 │
 ├── src/                    ← your actual code
 │   └── my_project/
@@ -853,10 +880,8 @@ my_project/
 ```
 
 ---
-
-## Hands-On Practice - Do This RIGHT NOW
+## Hands-On Practice
 Let's actually set up your first proper project:
-
 ```bash
 # 1. Create your projects directory
 mkdir ~/projects
@@ -915,7 +940,6 @@ deactivate
 
 ---
 ## Visual Summary
-
 ```
 ┌─────────────────────────────────────────────────────┐
 │           YOUR DEVELOPMENT ENVIRONMENT              │
@@ -954,7 +978,6 @@ deactivate
 
 ---
 ## Knowledge Check
-
 1. What command creates a virtual environment?
 2. How do you activate it on your OS?
 3. How do you know if a virtual environment is active?
@@ -976,7 +999,7 @@ Every single project you build will:
 - Be opened and edited in VS Code
 - Be run from the terminal
 
-This phase 0.2 setup is something you'll do
+This phase setup is something you'll do
 on day 1 of every new job, every new project,
 every new server you configure.
 Getting this right NOW saves you pain FOREVER.
