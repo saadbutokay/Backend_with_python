@@ -1,13 +1,3 @@
-# Phase 5.2 — Async Database Operations
-
-### "Real async DB queries in production backends"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Phase 5.1: You understand asyncio fundamentals.
 Phase 5.2: You apply async to databases — the most common

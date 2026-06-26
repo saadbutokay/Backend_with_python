@@ -1,13 +1,3 @@
-# Phase 4.2 — FastAPI
-
-### "Building production-grade APIs with Python"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 FastAPI is the modern Python web framework.
 

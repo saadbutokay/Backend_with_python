@@ -738,7 +738,7 @@ with ExitStack() as stack:
 
 ## 4. Exception Handling
 
-### The Full try/except/else/finally
+### The Full `try`/`except`/`else`/`finally`
 
 ```python
 # ─────────────────────────────────────────

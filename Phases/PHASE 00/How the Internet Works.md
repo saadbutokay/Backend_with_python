@@ -86,7 +86,7 @@ Physical world:   "23 Baker Street, London, UK"
 Internet:         "142.250.80.46"
 ```
 
-### IPv4 vs IPv6
+### 3.1 IPv4 vs IPv6
 
 **IPv4 (old):**
 - `142.250.80.46`
@@ -115,7 +115,7 @@ Port = The apartment number
                   apartment 443
 ```
 
-### Common ports you MUST know as a backend dev:
+### 4.1 Common ports:
 
 | Port | Protocol | Use Case |
 |------|----------|----------|
@@ -129,7 +129,7 @@ Port = The apartment number
 | 22 | SSH | Remote server access |
 | 25 | SMTP | Email sending |
 
-### Real example:
+### 4.2 Real example:
 ```
 When you visit https://google.com:
 
@@ -151,7 +151,7 @@ DNS says:     "google.com = 142.250.80.46"
 Browser goes: connects to 142.250.80.46
 ```
 
-### How DNS lookup works?
+### 5.1 How DNS lookup works?
 You type `google.com` and press Enter:
 ```
 Step 1: Check your computer's memory (DNS cache)
@@ -199,7 +199,7 @@ When you call someone:
 That's a protocol. Both sides know the rules.
 ```
 
-### TCP (Transmission Control Protocol)
+### 6.1 TCP (Transmission Control Protocol)
 TCP is like sending a certified letter.
 - Guarantees delivery
 - Guarantees correct order
@@ -215,18 +215,18 @@ TCP conversation:
   This is called the "3-way handshake"
 ```
 
-### UDP (User Datagram Protocol)
+### 6.2 UDP (User Datagram Protocol)
 UDP is like shouting across a room.
 - Fire and forget - no delivery guarantee
 - Faster (no confirmation overhead)
 - Used for: video calls, gaming, live streaming (better to skip a frame than to pause and retry)
 
-### HTTP (HyperText Transfer Protocol)
+### 6.3 HTTP (HyperText Transfer Protocol)
 The language browsers and servers use to talk. Built ON TOP(Technical Office Protocol) of TCP.
 
 You'll use this EVERY DAY as a backend engineer. We'll cover this deeply in a moment.
 
-### HTTPS
+### 6.4 HTTPS
 HTTP + encryption (TLS/SSL)
 Everything is scrambled so nobody can intercept it. The "S" means **Secure**.
 
@@ -242,13 +242,13 @@ Waits for response       ←      Processes & responds
  another service)
 ```
 
-### Rules:
+### 7.1 Rules:
 1. Client ALWAYS initiates the conversation
 2. Server WAITS and LISTENS for requests
 3. Server processes and sends back a response
 4. Connection can be closed after response (or kept alive for more requests)
 
-### Concrete example:
+### 7.2 Concrete example:
 ```
 Instagram on your phone (CLIENT)
     ↑
@@ -270,7 +270,7 @@ Phone displays the posts
 ---
 ## 8. HTTP & HTTPS - The Language of the Web
 As a backend engineer, HTTP is your native language.
-### HTTP Request Structure
+### 8.1 HTTP Request Structure
 Every request has:
 ```
 METHOD   PATH            VERSION
@@ -292,7 +292,7 @@ Content-Type: application/json
 }
 ```
 
-### HTTP Methods (Verbs)
+### 8.2HTTP Methods (Verbs)
 
 | Method | Meaning                    | Example Use                    |
 | ------ | -------------------------- | ------------------------------ |
@@ -302,7 +302,7 @@ Content-Type: application/json
 | PATCH  | "Update part of something" | Change just the username       |
 | DELETE | "Delete something"         | Delete a post                  |
 
-### HTTP Response Structure
+### 8.3 HTTP Response Structure
 ```
 VERSION  STATUS
   │        │
@@ -322,7 +322,7 @@ Content-Length: 348
 }
 ```
 
-### HTTP Status Codes - MEMORIZE THESE
+### 8.4 HTTP Status Codes - MEMORIZE THESE
 **2xx - SUCCESS**
 
 | Code | Name       | Meaning                       |
@@ -377,7 +377,7 @@ With HTTPS:
   Even if intercepted, unreadable without the key
 ```
 
-### How the encryption is set up (simplified):
+### 9.1 How the encryption is set up (simplified):
 1. **Browser:** "Hello server, I want to talk securely"
 2. **Server:** "Here's my SSL certificate (my identity proof)"
 3. **Browser:** Verifies certificate is legitimate
@@ -483,6 +483,7 @@ Before we move on, answer these in your head (or out loud):
 ---
 ## How This Connects to YOUR Future Work
 As a Python backend engineer, you will:
+```
 1. Build servers that LISTEN on specific ports
   (your FastAPI app runs on port 8000)
 
@@ -503,7 +504,7 @@ As a Python backend engineer, you will:
 
  7. Understand TCP connections
   (database connection pools, keep-alive)
-
+```
 **Everything we just learned will show up in your daily work as a backend engineer.**
 
 ---

@@ -1,13 +1,3 @@
-# Phase 6.3 — Integration Testing
-
-### "Testing that your pieces actually work together"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Unit tests:         Test ONE function/class in isolation.
                     Mock everything external.

@@ -1,13 +1,3 @@
-
-
-### "Connecting your Python code to PostgreSQL"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Phase 3.1 → You know SQL and PostgreSQL
 Phase 3.2 → You connect Python to PostgreSQL

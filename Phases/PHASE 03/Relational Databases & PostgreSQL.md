@@ -1,11 +1,3 @@
-# Phase 3.1 — Relational Databases & PostgreSQL
-
-**"Where your data actually lives"**
-
----
-
-## The Big Picture First
-
 ```
 Every backend application needs to store data permanently.
 

@@ -1,12 +1,3 @@
-# Phase 7.6 — Monitoring, Logging & Observability
-
-### "You can't fix what you can't see"
-
----
-
-## The Big Picture First
-
-text
 
 ```
 You've built and deployed your backend.

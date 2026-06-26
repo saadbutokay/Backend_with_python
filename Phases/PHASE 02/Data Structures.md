@@ -1,14 +1,5 @@
-# Phase 2.1 — Data Structures
-
-**"The building blocks of efficient software"**
-
----
-
-## The Big Picture First
-
-```
 Why do backend engineers need data structures?
-
+```
 Every day you will:
   - Store 1 million users in memory → which structure?
   - Find a user by ID in microseconds → which structure?

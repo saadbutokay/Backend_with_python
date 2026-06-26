@@ -4,10 +4,10 @@ Down below, everything is connected. Don't forget to explore "Open Graph View".
 Follow the structure down.
 *Duration: 1-3 weeks*
 
-1. [[Phase 5.1 — Asyncio Fundamentals]]
-2. [[Phase 5.2 — Async Database Operations]]
-3. [[Phase 5.3 — Threading vs Multiprocessing vs Async]]
-4. [[Phase 5.4 — Async HTTP Clients]]
+1. [[Asyncio Fundamentals]]
+2. [[Async Database Operations]]
+3. [[Threading vs Multiprocessing vs Async]]
+4. [[Async HTTP Clients]]
 
 ---
 

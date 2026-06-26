@@ -1,13 +1,3 @@
-# Phase 6.4 — Test Coverage, CI/CD Pipeline & Load Testing
-
-### "Measure quality, automate testing, and find your limits"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Phase 6.1: pytest fundamentals
 Phase 6.2: mocking and unit tests

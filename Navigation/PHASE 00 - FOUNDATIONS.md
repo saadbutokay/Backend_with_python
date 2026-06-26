@@ -5,6 +5,7 @@ Follow the structure down.
 *Duration: 1-4 weeks*
 
 1. [[Prerequisite Briefing]]
+2. [[Introduction To Python]]
 
 ---
 #### Computer Science Fundamentals

@@ -1,13 +1,3 @@
-
-
-### "The tools that make database work professional"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 You know SQL and can write queries.
 You know SQLAlchemy and can build models.

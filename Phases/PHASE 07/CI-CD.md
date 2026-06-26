@@ -1,13 +1,4 @@
-# Phase 7.3 — CI/CD (Continuous Integration / Continuous Deployment)
-
-### "Automate everything from code push to production"
-
----
-
-## The Big Picture First
-
-text
-
+Continuous Integration/Continuous Deployment
 ```
 Without CI/CD (manual process):
   1. Developer writes code

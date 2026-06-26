@@ -1,11 +1,3 @@
-# Phase 2.3 — Python-Specific Efficiency
-
-**"Writing Python that actually performs well"**
-
----
-
-## The Big Picture First
-
 ```
 Phase 2.1 → You know the data structures
 Phase 2.2 → You know the algorithms

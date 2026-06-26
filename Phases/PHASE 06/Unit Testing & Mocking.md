@@ -1,13 +1,3 @@
-# Phase 6.2 — Unit Testing & Mocking
-
-### "Test your code in isolation, without depending on anything external"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Unit test = test ONE thing in isolation.
 

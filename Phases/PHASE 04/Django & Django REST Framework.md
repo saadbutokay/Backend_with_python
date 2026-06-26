@@ -1,13 +1,3 @@
-# Phase 4.3 — Django & Django REST Framework
-
-### "The batteries-included framework with massive market demand"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 FastAPI = modern, fast, async-first
 Django  = mature, feature-rich, "batteries included"

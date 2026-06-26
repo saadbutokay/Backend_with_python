@@ -1,11 +1,3 @@
-# Phase 2.2 — Algorithms
-
-**"Thinking efficiently about problems"**
-
----
-
-## The Big Picture First
-
 ```
 Data structures = WHERE you store data
 Algorithms      = HOW you process data

@@ -1,13 +1,3 @@
-# Phase 5.3 — Threading vs Multiprocessing vs Async
-
-### "Choosing the right concurrency tool for the job"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Python has THREE ways to do things concurrently:
 

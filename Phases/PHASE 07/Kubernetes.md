@@ -1,12 +1,3 @@
-# Phase 7.5 — Kubernetes
-
-### "Container orchestration at scale"
-
----
-
-## The Big Picture First
-
-text
 
 ```
 Docker Compose: great for running containers on ONE server.

@@ -51,9 +51,7 @@ code .
 ---
 
 ## 1. Defining Functions
-
-### Basic Function Anatomy
-
+In Python, you define a function using the **`def` keyword**, followed by the **function name**, **parentheses `()`**, and a **colon `:`**. The code block inside the function must be indented.
 ```python
 # functions.py
 

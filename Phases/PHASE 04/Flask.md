@@ -1,13 +1,3 @@
-# Phase 4.4 — Flask
-
-### "The lightweight framework you'll encounter everywhere"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Flask = micro-framework
   "Micro" means: gives you the minimum, you add what you need.

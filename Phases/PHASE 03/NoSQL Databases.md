@@ -1,12 +1,3 @@
-
-### "When relational isn't the right tool"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 You now know PostgreSQL (relational database).
 Now learn when and why to use different types of databases.

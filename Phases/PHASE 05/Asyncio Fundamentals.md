@@ -1,13 +1,3 @@
-# Phase 5.1 — Asyncio Fundamentals
-
-### "Handle thousands of requests with a single thread"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 The problem with synchronous code in a backend:
 

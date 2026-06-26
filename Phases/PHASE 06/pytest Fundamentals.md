@@ -1,13 +1,3 @@
-# Phase 6.1 — pytest Fundamentals
-
-### "Writing tests that give you confidence to ship"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Why do senior engineers write tests?
 

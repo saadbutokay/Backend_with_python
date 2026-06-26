@@ -20,10 +20,12 @@ Git is a system that:
   - Stores your code safely on the internet (GitHub)
   - Tracks WHO changed WHAT and WHEN
 
+[Click this](https://youtu.be/HkdAHXoRtos) to watch it in YouTube.
+
 ---
 ## 1. Core Concepts
 Before commands, understand the mental model.
-### The Three States of Git
+### 1.1 The Three States of Git
 ```
 Your files exist in 3 possible states:
 ┌─────────────────────────────────────────────────────┐
@@ -52,7 +54,7 @@ git add     = "Hey you, stand here for the photo"
 git commit  = "Click" - photo taken forever
 ```
 
-### What is a Repository?
+### 1.2 What is a Repository?
 A repository (repo) is just a folder that Git is tracking.
 ```
 my_project/          ← this is your repo
@@ -67,7 +69,7 @@ The .git/ folder = Git's brain
 Delete it = lose all history
 ```
 
-### What is a Commit?
+### 1.3 What is a Commit?
 A commit is a snapshot of your code at a moment in time.
 ```
 Each commit has:
@@ -152,7 +154,7 @@ git config --global --list
 ---
 ## 4. Core Git Commands - The Daily Workflow
 
-### Starting a Repository
+### 4.1 Starting a Repository
 ```bash
 # Option A: Start fresh in an existing folder
 cd my_project
@@ -168,7 +170,7 @@ git clone https://github.com/username/repository-name.git
 git clone https://github.com/username/repo.git my_folder_name
 ```
 
-### Checking Status - Your Most Used Command
+### 4.2 Checking Status
 
 ```bash
 git status
@@ -185,13 +187,13 @@ Changes not staged for commit:
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-        new_feature.py               ← new file Git doesn't know about
+        new_feature.py           ← new file Git doesn't know about
 
 nothing added to commit but untracked files present
 ```
 **Run `git status` constantly. It tells you exactly where you are.**
 
-### The Add → Commit Cycle
+### 4.3 The `add` → Commit Cycle
 ```bash
 # Stage a specific file
 git add main.py
@@ -212,7 +214,7 @@ git commit -m "Add user authentication endpoint"
 git commit -am "Fix typo in login function"
 ```
 
-### Viewing History
+### 4.4 Viewing History
 ```bash
 # See all commits
 git log
@@ -239,7 +241,7 @@ git log --oneline --graph --all
 git show a3f8d91
 ```
 
-### Seeing What Changed
+### 4.5 Seeing What Changed
 ```bash
 # See changes in working directory (not yet staged)
 git diff
@@ -265,7 +267,7 @@ git diff a3f8d91 b7c2e44
  Green lines (+) = added
 ```
 
-### Undoing Mistakes
+### 4.6 Undoing Mistakes
 ```bash
 # Undo changes to a file (before staging)
 # Restore file to last commit state
@@ -287,7 +289,6 @@ git revert a3f8d91
 ```
 
 **Visual:**
-
 ```
 git reset --soft HEAD~1:
   Before: [commit A] [commit B] [commit C] ← HEAD
@@ -301,9 +302,7 @@ git revert:
 ```
 
 ---
-## 5. Branching - Working in Parallel
-
-### What is a Branch?
+## 5. Branching
 The default branch is called "main". It's your stable, working code. A branch is a separate copy where you can work without affecting main.
 ```
 main:     A → B → C → D
@@ -324,7 +323,7 @@ Everyone works in their own branch.
 Nothing breaks main until it's reviewed and merged.
 ```
 
-### Branch Commands
+### 5.1 Branch Commands
 ```bash
 # See all branches
 git branch
@@ -357,7 +356,7 @@ git branch -D feature/user-login
 git branch -v
 ```
 
-### Merging Branches
+### 5.2 Merging Branches
 ```bash
 # Step 1: Switch to the branch you want to merge INTO
 git switch main
@@ -389,14 +388,13 @@ Fast-forward merge (simple):
   (creates a new "merge commit")
 ```
 
-### Merge Conflicts - Don't Panic
+### 5.3 Merge Conflicts
 A conflict happens when two branches changed the **same line** differently.
-```bash
-# Git tells you:
-Auto-merging main.py
-CONFLICT (content): Merge conflict in main.py
-Automatic merge failed; fix conflicts and then commit the result.
-```
+
+**Git tells you:**
+- Auto-merging main.py
+- CONFLICT (content): Merge conflict in main.py
+- Automatic merge failed; fix conflicts and then commit the result.
 
 **Open the conflicted file. You'll see:**
 ```python
@@ -444,7 +442,7 @@ and buttons:
 ---
 ## 6. GitHub - Remote Repositories
 
-### Local vs Remote
+### 6.1 Local vs Remote
 ```
 LOCAL repository:
   Lives on YOUR computer
@@ -458,7 +456,7 @@ REMOTE repository (GitHub):
   Foundation for collaboration
 ```
 
-### Setting Up GitHub
+### 6.2 Setting Up GitHub
 1. Go to [github.com](https://github.com)
 2. Sign up for a free account
 3. Verify your email
@@ -467,7 +465,7 @@ REMOTE repository (GitHub):
    - Add your name
    - Add a bio: "Python Backend Developer"
 
-### SSH Keys - Authenticate Securely
+### 6.3 SSH Keys - Authenticate Securely
 Instead of typing your password every time, SSH keys let GitHub know it's really you.
 
 **Step 1: Generate SSH key**
@@ -513,7 +511,7 @@ ssh -T git@github.com
 # Output: Hi username! You've successfully authenticated.
 ```
 
-### Pushing to GitHub
+### 6.4 Pushing to GitHub
 ```bash
 # Step 1: Create a new repo on github.com
 # (Click the "+" button → New repository)
@@ -537,7 +535,7 @@ git push -u origin main
 git push
 ```
 
-### Pulling from GitHub
+### 6.5 Pulling from GitHub
 ```bash
 # Get latest changes from GitHub
 git pull
@@ -554,7 +552,7 @@ git merge origin/main
 git pull origin feature/payments
 ```
 
-### The Complete Team Workflow
+### 6.6 The Complete Team Workflow
 ```bash
 # Morning: get latest code
 git pull
@@ -656,7 +654,6 @@ When creating a repo on GitHub:
 
 ---
 ## 8. Pull Requests & Code Reviews
-### What is a Pull Request (PR)?
 A Pull Request is NOT a Git feature. It's a GitHub feature.
 ```
 It says:
@@ -666,7 +663,7 @@ It says:
 ```
 This is how ALL professional teams work. Nobody pushes directly to main.
 
-### Creating a Pull Request
+### 8.1 Creating a Pull Request
 1. Push your feature branch to GitHub - `git push -u origin feature/user-login`
 2. Go to [github.com](https://github.com) → your repository
 3. GitHub shows a banner: "feature/user-login had recent pushes" - Click **"Compare & pull request"**
@@ -682,7 +679,7 @@ This is how ALL professional teams work. Nobody pushes directly to main.
    - Click **"Merge pull request"**
    - Delete the branch
 
-### Writing Good PR Descriptions
+### 8.2 Writing Good PR Descriptions
 ```
 ## What this PR does
 Adds JWT-based authentication for user login.
@@ -708,7 +705,7 @@ Closes #42
 ---
 ## 9. Git Flow & Conventional Commits
 
-### Branch Naming Conventions
+### 9.1 Branch Naming Conventions
 ```
 feature/what-you-built     → new functionality
 bugfix/what-you-fixed      → bug fixes
@@ -724,7 +721,7 @@ Examples:
   chore/update-dependencies
 ```
 
-### Conventional Commits
+### 9.2 Conventional Commits
 Professional teams use a standard commit message format:
 ```
 type(scope): short description
@@ -795,7 +792,7 @@ Thumbs.db
 
 ```
 <!-- README.md -->
-# 📔 Developer Journal
+# Developer Journal
 
 My daily learning journal as I become a Python backend engineer.
 

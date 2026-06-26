@@ -1,13 +1,3 @@
-# Phase 5.4 — Async HTTP Clients
-
-### "Calling external services without blocking your server"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Your backend rarely works alone.
 It calls other services constantly:

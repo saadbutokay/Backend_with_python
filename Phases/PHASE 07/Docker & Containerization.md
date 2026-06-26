@@ -1,12 +1,3 @@
-# Phase 7.2 — Docker & Containerization
-
-### "Ship your app anywhere, exactly the same way"
-
----
-
-## The Big Picture First
-
-text
 
 ```
 The classic problem:

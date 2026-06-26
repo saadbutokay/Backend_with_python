@@ -1,12 +1,3 @@
-# Phase 7.1 — Linux & Server Administration
-
-### "The operating system your backend lives on"
-
----
-
-## The Big Picture First
-
-text
 
 ```
 Every backend you build eventually runs on a Linux server.

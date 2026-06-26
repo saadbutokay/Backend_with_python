@@ -1,9 +1,3 @@
-For every concept I teach you:
-1. I explain WHAT it is.
-2. I show you WHY it matters (real backend context)
-3. I show you code examples.
-4. You understand HOW it works internally.
-
 **Open VS Code right now. Create this:**
 ```bash
 # In your terminal
@@ -13,12 +7,14 @@ python3 -m venv venv
 source venv/bin/activate  # Mac/Linux
 # venv\Scripts\activate   # Windows
 touch basics.py
-code.
+code .
 ```
 **Write every example yourself. Don't copy-paste. Type it.**
 
 ---
 ## 1. Variables & Data Types
+In Python, **variables are reserved memory locations used to store data values**, created automatically the moment you assign a value to them using the `=` operator. Python is **dynamically typed**, meaning you do not need to explicitly declare a variable's data type, and the same variable can change types during execution.
+
 A variable is a named container that holds a value.
 ```
 Think of it like a labeled box:
@@ -49,7 +45,18 @@ Run it:
 python3 basics.py
 ```
 
-### Python's Built-in Data Types
+### 1.1 Variable Names
+A variable can have a short name (like `x` and `y`) or a more descriptive name (`age`, `carname`, `total_volume`).
+
+**Rules for Python variables:**
+- A variable name must start with a letter or the underscore character
+- A variable name cannot start with a number
+- A variable name can only contain alpha-numeric characters and underscores (`A-z`, `0-9`, and `_` )
+- Variable names are case-sensitive (`age`, `Age` and `AGE` are three different variables)
+- A variable name cannot be any of the [Python keywords](https://www.w3schools.com/python/python_ref_keywords.asp).
+
+### 1.2 Python's Built-in Data Types
+Python has **built-in data types** categorized into numeric, text, sequence, mapping, set, boolean, and binary types. Because Python is **dynamically typed**, you do not need to explicitly declare a data type when creating a variable; the interpreter infers it automatically at runtime.
 ```python
 # ─────────────────────────────────────────
 # TEXT
@@ -64,7 +71,7 @@ multiple lines
 # ─────────────────────────────────────────
 # NUMBERS
 # ─────────────────────────────────────────
-age = 25                # int (integer — whole number)
+age = 25                # int (integer - whole number)
 price = 19.99           # float (decimal number)
 big_number = 1_000_000  # int (underscores for readability)
 complex_num = 3 + 4j    # complex (you'll rarely use this)
@@ -93,11 +100,9 @@ print(type(is_active))   # <class 'bool'>
 print(type(middle_name)) # <class 'NoneType'>
 ```
 
-### How Variables Work Internally
+### 1.3 How Variables Work Internally
+Python variables are LABELS, not boxes. They point to objects in memory.
 ```python
-# Python variables are LABELS, not boxes
-# They point to objects in memory
-
 x = 10    # x points to object 10 in memory
 y = x     # y points to the SAME object
 
@@ -124,7 +129,8 @@ x = 20:
   [10] ◄── y
 ```
 
-### Type Conversion
+### 1.4 Type Conversion
+**Type conversion in Python** is the process of changing a value from one data type to another. Python supports two categories of type conversion: **Implicit Type Conversion**, which happens automatically, and **Explicit Type Conversion (Type Casting)**, which you must trigger manually using built-in functions.
 ```python
 # Converting between types (casting)
 
@@ -177,7 +183,7 @@ price = float(user_input_price)
 # int("twenty-five") → ValueError: invalid literal
 ```
 
-### What Happens When Conversion Fails
+### 1.5 What Happens When Conversion Fails
 ```python
 # Safe conversion (you'll write this pattern often)
 user_input = "abc"
@@ -186,19 +192,17 @@ try:
 except ValueError:
     print("That's not a valid number!")
     age = 0
-
-# Don't worry about try/except fully yet
-# We cover it in section 1.4
-# Just know: invalid conversions raise errors
 ```
+Don't worry about try/except fully yet. We cover it in [[Advanced Python]].
+Just know: invalid conversions raise errors.
 
 ---
 ## 2. Strings
-Strings are text. In backend dev, you work with text constantly: API responses, user data, error messages, SQL queries, JSON...
+Strings are text. In backend dev, you work with text constantly: API responses, user data, error messages, SQL queries, JSON etc.
 
-### Creating Strings
+### 2.1 Creating Strings
+Four ways to create strings:
 ```python
-# Four ways to create strings
 single = 'Hello'
 double = "Hello"
 triple_single = '''Hello
@@ -215,7 +219,7 @@ text2 = 'He said "Hello"'            # use single when text has double quotes
 text3 = "He said \"Hello\""          # OR escape with backslash
 ```
 
-### String Methods - The Ones You'll Use Daily
+### 2.2 String Methods
 ```python
 name = "  Alice Smith  "
 
@@ -236,6 +240,7 @@ print(email.find("@"))       # 5 (index position of @)
 print(email.find("xyz"))     # -1 (not found)
 print(email.index("@"))      # 5 (like find but raises error if not found)
 print(email.count("e"))      # 2 (how many times 'e' appears)
+
 print("alice" in email)      # True
 print("@" in email)          # True
 print(email.startswith("alice"))  # True
@@ -262,10 +267,9 @@ print("abc123".isalnum())   # True
 print("   ".isspace())      # True
 ```
 
-### String Slicing
+### 2.3 String Slicing
+Strings are like a sequence of characters. Each character has an index (position)
 ```python
-# Strings are like a sequence of characters
-# Each character has an index (position)
 text = "Python"
 #       012345 ← positive indexes (left to right)
 #      -654321 ← negative indexes (right to left)
@@ -292,7 +296,7 @@ jwt_token = token[7:]
 print(jwt_token)  # eyJhbGciOiJIUzI1NiJ9.abc123
 ```
 
-### f-strings - Your Best Friend
+### 2.4 f-strings
 ```python
 # Old way (don't do this)
 name = "Alice"
@@ -331,7 +335,7 @@ print(f"[{status}] {endpoint} - User {user_id} ({username}) accessed")
 # [200] /users - User 42 (alice) accessed
 ```
 
-### String Immutability
+### 2.5 String Immutability
 ```python
 # Strings CANNOT be changed after creation
 text = "Hello"
@@ -495,11 +499,11 @@ def get_user(user_id):
 ---
 
 ## 5. Input & Output
-
+In Python, the two primary built-in functions used for handling standard input and output are **`input()`** and **`print()`**.
+### 5.1 Output
+The primary way to output data in Python is by ==using the **`print()` function**==, which displays text, variables, or expressions directly to the console.
 ```python
-# ─────────────────────────────────────────
 # OUTPUT
-# ─────────────────────────────────────────
 print("Hello World")          # basic print
 
 # Multiple values
@@ -515,10 +519,12 @@ print("...")       # Loading...
 
 # Print nothing (just a blank line)
 print()
+```
 
-# ─────────────────────────────────────────
-# INPUT (terminal input — for CLI apps)
-# ─────────────────────────────────────────
+### 5.2 Input
+In Python, you accept user input by using the built-in **`input()` function**. This function pauses program execution, displays an optional message to the console, and waits for the user to type something and press Enter.
+```python
+# INPUT (terminal input - for CLI apps)
 # Note: In web backends, input comes from HTTP requests
 # But input() is useful for CLI tools and learning
 
@@ -539,17 +545,16 @@ except ValueError:
 ```
 
 ---
-
 ## 6. Operators
 
-### Comparison Operators
-
+### 6.1 Comparison Operators
+**Comparison operators in Python** evaluate the relationship between two values and always return a Boolean result: either `True` or `False`. They are fundamental for decision-making structures like `if` statements and loops.
 ```python
 x = 10
 y = 20
 
 print(x == y)   # False (equal to)
-print(x != y)   # True  (not equal to)
+print(x != y)   # True  (not equal to) (! & =)
 print(x < y)    # True  (less than)
 print(x > y)    # False (greater than)
 print(x <= y)   # True  (less than or equal)
@@ -580,8 +585,8 @@ print(a is b)  # False (different objects in memory)
 # Use: == for everything else
 ```
 
-### Logical Operators
-
+### 6.2 Logical Operators
+Python uses three logical operators to combine or modify conditional statements: **`and`**, **`or`**, and **`not`**. Unlike many programming languages that use symbols like `&&`, `||`, or `!`, Python relies entirely on these **lowercase English keywords**.
 ```python
 age = 25
 has_subscription = True
@@ -618,8 +623,8 @@ is_valid = False and expensive_check()  # "Checking database..." NOT printed
 is_valid = True or expensive_check()    # "Checking database..." NOT printed
 ```
 
-### Assignment Operators
-
+### 6.3 Assignment Operators
+**Assignment operators** in Python are used to **store or update values** in variables. The most common and foundational assignment operator is the single equal sign (`=`), but Python also includes **augmented (compound) assignment operators** that combine math or bitwise operations with assignment to make your code more concise.
 ```python
 count = 0
 
@@ -641,13 +646,9 @@ total_price += 5.99   # add another
 print(f"Total: ${total_price}")  # Total: $25.98
 ```
 
-### Bitwise Operators (Know They Exist)
-
+### 6.4 Bitwise Operators (Know They Exist)
+These operate on binary representations, you'll rarely use these in web backend. But they appear in systems programming and flags.
 ```python
-# These operate on binary representations
-# You'll rarely use these in web backend
-# But they appear in systems programming and flags
-
 a = 0b1010  # 10 in binary
 b = 0b1100  # 12 in binary
 
@@ -669,57 +670,64 @@ print(user_perms & EXECUTE)  # 0 = does NOT have EXECUTE permission
 ```
 
 ---
-
 ## 7. Conditional Statements
+**Conditional statements in Python** allow you to make decisions and execute specific blocks of code based on whether a condition is `True` or `False`. Python relies on **mandatory indentation** (usually 4 spaces) instead of curly braces to define the scope of these code blocks.
+
+### 7.1 The `if` Statement
+The most basic form executes code **only if** a specific condition evaluates to `True`.
+```python
+age = 20
+if age >= 18:
+    print("You are eligible to vote.")  # Runs because condition is True
+```
+
+### 7.2 The `if-else` Statement
+Provides an alternative block of code that runs **only if** the `if` condition evaluates to `False`.
+```python
+score = 45
+if score >= 50:
+    print("Passed")
+else:
+    print("Failed")  # Runs because score is less than 50
+```
+
+### 7.3 The `if-elif-else` Ladder
+The `elif` keyword stands for **"else if"**. It allows you to chain multiple sequential checks. Python exits the chain as soon as it finds the _first_ matching truth condition.
 
 ```python
-# ─────────────────────────────────────────
-# IF / ELIF / ELSE
-# ─────────────────────────────────────────
-status_code = 404
+traffic_light = "Yellow"
 
-if status_code == 200:
-    print("OK")
-elif status_code == 201:
-    print("Created")
-elif status_code == 400:
-    print("Bad Request")
-elif status_code == 401:
-    print("Unauthorized")
-elif status_code == 403:
-    print("Forbidden")
-elif status_code == 404:
-    print("Not Found")  # this runs
-elif status_code >= 500:
-    print("Server Error")
+if traffic_light == "Red":
+    print("Stop")
+elif traffic_light == "Yellow":
+    print("Slow down")  # Runs and skips the rest
 else:
-    print("Unknown status code")
+    print("Go")
+```
 
-# ─────────────────────────────────────────
-# NESTED CONDITIONS
-# ─────────────────────────────────────────
-is_logged_in = True
-role = "admin"
-is_banned = False
+### 7.4 Nested Conditions
+You can place conditional blocks **inside** other conditional blocks to handle complex multi-layered logic.
+```python
+has_ticket = True
+is_vip = False
 
-if is_logged_in:
-    if is_banned:
-        print("Account suspended")
-    elif role == "admin":
-        print("Welcome, Administrator")
+if has_ticket:
+    if is_vip:
+        print("Welcome to the lounge.")
     else:
-        print("Welcome, User")
+        print("Welcome to the standard seating.")  # Runs
 else:
-    print("Please log in")
+    print("Access denied.")
+```
 
-# ─────────────────────────────────────────
-# TERNARY (one-line if/else)
-# ─────────────────────────────────────────
+### 7.5 Ternary Operator
+In Python, the **ternary operator** (also called a conditional expression) allows you to write an `if/else` statement in a single line.
+```python
 age = 20
 status = "adult" if age >= 18 else "minor"
 print(status)  # adult
 
-# Nested ternary (use sparingly — gets confusing)
+# Nested ternary (use sparingly - gets confusing)
 score = 85
 grade = "A" if score >= 90 else "B" if score >= 80 else "C"
 print(grade)  # B
@@ -731,16 +739,11 @@ print(f"{user['name']} is on the {plan} plan")
 ```
 
 ---
-
 ## 8. Loops
-
-### For Loops
-
+Python has **two primitive loop commands**: the `for` loop and the `while` loop. These structures allow you to automate repetitive tasks efficiently.
+### 8.1 `for` Loops
+A `for` loop is used to **iterate over a sequence** (like a list, tuple, dictionary, set, or string) or an iterable object. It executes a block of code a predetermined number of times.
 ```python
-# ─────────────────────────────────────────
-# FOR LOOP — iterate over a sequence
-# ─────────────────────────────────────────
-
 # Loop over a list
 users = ["Alice", "Bob", "Charlie"]
 for user in users:
@@ -753,7 +756,17 @@ for user in users:
 for char in "Python":
     print(char)
 # P  y  t  h  o  n
+```
 
+#### Using the `range()` Function
+To repeat code a specific number of times, pair the loop with the [Python range() function](https://www.w3schools.com/python/ref_func_range.asp). The endpoint is exclusive.
+```python
+# Prints 0, 1, 2, 3, 4
+for i in range(5):
+    print(i)
+```
+
+```python
 # Loop over a range
 for i in range(5):
     print(i)
@@ -768,10 +781,11 @@ for i in range(0, 10, 2):  # even numbers
 
 for i in range(10, 0, -1):  # countdown
     print(i)  # 10 9 8 7 6 5 4 3 2 1
+```
 
-# ─────────────────────────────────────────
-# ENUMERATE — get index AND value
-# ─────────────────────────────────────────
+#### Getting the Index with `enumerate()`
+If you need both the item and its index position, use `enumerate()`.
+```python
 fruits = ["apple", "banana", "cherry"]
 
 # Without enumerate (old way):
@@ -798,12 +812,9 @@ for i, error in enumerate(errors, start=1):
     print(f"Error {i}: {error}")
 ```
 
-### While Loops
-
+### 8.2 `while` Loops
+A `while` loop repeatedly executes a block of code **as long as a specific condition remains true**. Use it when you do not know in advance how many iterations are needed.
 ```python
-# ─────────────────────────────────────────
-# WHILE LOOP — repeat until condition False
-# ─────────────────────────────────────────
 count = 0
 while count < 5:
     print(count)
@@ -817,7 +828,7 @@ max_retries = 3
 attempt = 0
 success = False
 
-while attempt < max_retries and not success:
+while attempt < max_retries p not success:
     attempt += 1
     print(f"Attempt {attempt}...")
     # try to connect to database
@@ -834,12 +845,14 @@ else:
     print("Failed after all retries")
 ```
 
-### break, continue, else
+### 8.3 Loop Control Statements
+You can alter the behavior of a loop using specific control keywords:
 
+- `break`: **Exits the loop entirely**, even if the loop condition is still met.
+- `continue`: **Skips the rest of the current iteration** and jumps directly to the next one.
+
+**`break` - exit the loop immediately:**
 ```python
-# ─────────────────────────────────────────
-# BREAK — exit the loop immediately
-# ─────────────────────────────────────────
 users = ["Alice", "Bob", "Charlie", "Dave"]
 target = "Charlie"
 
@@ -851,10 +864,10 @@ for user in users:
 # Checking Alice...
 # Checking Bob...
 # Found: Charlie
+```
 
-# ─────────────────────────────────────────
-# CONTINUE — skip to next iteration
-# ─────────────────────────────────────────
+**`CONTINUE` - skip to next iteration:**
+```python
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for n in numbers:
     if n % 2 == 0:
@@ -876,10 +889,10 @@ for record in records:
     print(f"Processing: {record['email']}")
 # Processing: alice@test.com
 # Processing: charlie@test.com
+```
 
-# ─────────────────────────────────────────
-# ELSE on loops (unique to Python)
-# ─────────────────────────────────────────
+**`else` on loops (unique to Python):**
+```python
 # The else block runs if loop completed WITHOUT break
 
 users = ["Alice", "Bob", "Charlie"]
@@ -902,18 +915,28 @@ def find_user_by_email(email, users):
         return None  # not found
 ```
 
----
-
-## 9. Collections - Lists, Tuples, Sets, Dicts
-
-These are the most important data structures in Python. You will use these EVERY SINGLE DAY.
-
-### Lists — Ordered, Changeable
+### 8.4 Nested Loops
+You can place loops inside other loops. The inner loop executes completely for every single iteration of the outer loop.
 
 ```python
-# ─────────────────────────────────────────
+for i in range(2):        # Outer loop
+    for j in range(3):    # Inner loop
+        print(f"({i}, {j})")
+```
+
+---
+## 9. Collections - Lists, Tuples, Sets, Dicts
+These are the most important [[Data Structures|data structures]] in Python. You will use these EVERY SINGLE DAY.
+Collection = single "variable" used to store multiple values.
+- `LISTS` - `[]` **ordered** & **changeable**. Duplicates OK.
+- `SET` - `{}` **Unordered** & **Unique**. but Add/Remove OK. No Duplicates.
+- `TUPLES` - `()` **ordered** & **Unchangeable**. Duplicate OK. Faster.
+
+Watch [this](https://youtu.be/gOMW_n2-2Mw) for better understanding. Also [this](https://youtu.be/11WrzU81q68).
+### 9.1 Lists - Ordered, Changeable
+In programming, an **ordered** and **changeable** (mutable) list is a data structure, most commonly associated with [Python Lists](https://www.w3schools.com/python/python_lists.asp) that allows you to store multiple items, modify them after creation, and maintain a fixed sequence.
+```python
 # LISTS
-# ─────────────────────────────────────────
 # Ordered: items have positions (indexes)
 # Mutable: can add, remove, change items
 # Allows duplicates
@@ -983,67 +1006,10 @@ page_posts = all_posts[start:end]
 print(page_posts)  # [1, 2, 3]
 ```
 
-### Tuples — Ordered, Immutable
-
+### 9.2 Sets - Unordered, Unique
+In Python, a **set** is a built-in data structure that represents an **unordered collection of unique items**. This means a set automatically filters out duplicate entries and does not keep track of element positions or insertion history.
 ```python
-# ─────────────────────────────────────────
-# TUPLES
-# ─────────────────────────────────────────
-# Like lists BUT cannot be changed after creation
-# Use when data should NOT change
-
-# Creating
-empty_tuple = ()
-coordinates = (40.7128, -74.0060)  # NYC lat/long
-rgb_color = (255, 128, 0)
-single_item = (42,)       # ← comma required for single item!
-single_wrong = (42)       # this is just int 42, NOT a tuple
-
-# Accessing (same as list)
-print(coordinates[0])  # 40.7128
-print(coordinates[-1]) # -74.0060
-print(coordinates[0:2])# (40.7128, -74.0060)
-
-# Unpacking (very Pythonic)
-lat, lng = coordinates
-print(lat)  # 40.7128
-print(lng)  # -74.0060
-
-# Swapping variables (Python magic)
-a, b = 1, 2
-a, b = b, a
-print(a, b)  # 2 1
-
-# Extended unpacking
-first, *rest = [1, 2, 3, 4, 5]
-print(first)  # 1
-print(rest)   # [2, 3, 4, 5]
-
-*start, last = [1, 2, 3, 4, 5]
-print(start)  # [1, 2, 3, 4]
-print(last)   # 5
-
-# Tuples are IMMUTABLE
-point = (10, 20)
-# point[0] = 99 ← TypeError: cannot modify tuple
-
-# When to use tuple vs list:
-# tuple → fixed data (coordinates, RGB, DB record columns)
-# list  → data that changes (shopping cart, user list)
-
-# Real backend example:
-# Database returns rows as tuples
-db_row = (1, "alice@email.com", "Alice Smith", True)
-user_id, email, name, is_active = db_row
-print(f"User {user_id}: {name}")
-```
-
-### Sets — Unordered, Unique
-
-```python
-# ─────────────────────────────────────────
 # SETS
-# ─────────────────────────────────────────
 # Unordered: no guaranteed order, no indexes
 # Unique: NO duplicates allowed
 # Mutable: can add/remove items
@@ -1094,8 +1060,64 @@ pending = all_users - completed_onboarding
 print(pending)  # {2, 4}
 ```
 
-### Dictionaries — Key-Value Pairs
 
+### 9.3 Tuples - Ordered, Unchangeable
+Tuples in Python are **ordered**, **immutable** collections of items. They allow duplicate values and can hold mixed data types (strings, numbers, etc.). Once created, you cannot change, add, or remove their elements.
+```python
+# TUPLES
+# Like lists BUT cannot be changed after creation
+# Use when data should NOT change
+
+# Creating
+empty_tuple = ()
+coordinates = (40.7128, -74.0060)  # NYC lat/long
+rgb_color = (255, 128, 0)
+single_item = (42,)       # ← comma required for single item!
+single_wrong = (42)       # this is just int 42, NOT a tuple
+
+# Accessing (same as list)
+print(coordinates[0])  # 40.7128
+print(coordinates[-1]) # -74.0060
+print(coordinates[0:2])# (40.7128, -74.0060)
+
+# Unpacking (very Pythonic)
+lat, lng = coordinates
+print(lat)  # 40.7128
+print(lng)  # -74.0060
+
+# Swapping variables (Python magic)
+a, b = 1, 2
+a, b = b, a
+print(a, b)  # 2 1
+
+# Extended unpacking
+first, *rest = [1, 2, 3, 4, 5]
+print(first)  # 1
+print(rest)   # [2, 3, 4, 5]
+
+*start, last = [1, 2, 3, 4, 5]
+print(start)  # [1, 2, 3, 4]
+print(last)   # 5
+
+# Tuples are IMMUTABLE
+point = (10, 20)
+# point[0] = 99 ← TypeError: cannot modify tuple
+
+# When to use tuple vs list:
+# tuple → fixed data (coordinates, RGB, DB record columns)
+# list  → data that changes (shopping cart, user list)
+
+# Real backend example:
+# Database returns rows as tuples
+db_row = (1, "alice@email.com", "Alice Smith", True)
+user_id, email, name, is_active = db_row
+print(f"User {user_id}: {name}")
+```
+
+### 9.4 Dictionaries - Key-Value Pairs
+A **Python dictionary stores data in key-value pairs** where each unique key maps directly to a specific value. Dictionaries are written using curly braces `{}` with colons `:` separating the keys and values.
+
+Watch [this](https://youtu.be/MZZSMaEAC2g) for better understanding.
 ```python
 # ─────────────────────────────────────────
 # DICTIONARIES
@@ -1188,13 +1210,10 @@ print(city)  # New York
 ```
 
 ---
-
 ## 10. Comprehensions - Python's Superpower
-
+**Comprehensions** in Python are concise, single-line syntactic patterns used to create new collections from existing iterables. They replace verbose `for` loops, making your code cleaner, more readable, and often faster.
 ```python
-# ─────────────────────────────────────────
 # LIST COMPREHENSION
-# ─────────────────────────────────────────
 # Short, readable way to create lists
 
 # Old way:
@@ -1251,7 +1270,6 @@ print(unique_emails)  # {'alice@test.com', 'bob@test.com'}
 ```
 
 ---
-
 ## 11. Unpacking & Packing
 
 ```python
@@ -1358,7 +1376,6 @@ When to use what:
 12. How do you remove duplicates from a list?
 
 ---
-
 ## Practice Exercises - Do These Now
 
 ```python
@@ -1394,10 +1411,8 @@ scores = [85, 92, 78, 95, 88]
 ```
 
 ---
-
 ## Phase 1.1 Complete!
 **You now know:**
-```
 - Variables and all data types
 - Strings and all their methods
 - Numbers and operators
@@ -1409,4 +1424,3 @@ scores = [85, 92, 78, 95, 88]
 - Lists, Tuples, Sets, Dictionaries
 - Comprehensions
 - Unpacking and packing
-```

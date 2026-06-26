@@ -1,13 +1,3 @@
-# Phase 4.1 — HTTP & API Fundamentals
-
-### "The language your backend speaks"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 Everything you've learned so far:
   Python → the language you write in

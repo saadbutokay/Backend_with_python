@@ -1,13 +1,3 @@
-# Phase 4.5 — Project Structure & Patterns
-
-### "Writing code that scales, teams can maintain, and engineers are proud of"
-
----
-
-## The Big Picture First
-
-text
-
 ```
 You've learned three frameworks.
 Each can solve the same problem.

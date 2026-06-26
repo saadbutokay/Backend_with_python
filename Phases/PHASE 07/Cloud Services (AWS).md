@@ -1,12 +1,3 @@
-# Phase 7.4 — Cloud Services (AWS)
-
-### "Deploying your backend where the real world runs"
-
----
-
-## The Big Picture First
-
-text
 
 ```
 Why AWS?

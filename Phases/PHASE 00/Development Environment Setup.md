@@ -16,7 +16,7 @@ Your computer
 ---
 ## 1. Installing Python
 
-### What is Python the interpreter?
+### 1.1 What is Python the interpreter?
 ```
 You write:          Python reads it:         Computer does it:
 ─────────────────────────────────────────────────────────────
@@ -25,7 +25,7 @@ print("Hello")  →  "oh, print means         → displays
 ```
 Python is the program that READS and RUNS your code. Without it, your `.py` files are just text files.
 
-### Installing Python
+### 1.2 Installing Python
 **Step 1: Check if Python is already installed**
 Open your terminal and type:
 ```bash
@@ -75,7 +75,7 @@ sudo apt install python3.12 python3.12-venv python3-pip
 python3 --version
 ```
 
-### ⚠️ Important: `python` vs `python3`
+### 1.3 `python` vs `python3`
 ```
 On most systems:
   python   → might mean Python 2 (OLD, avoid)
@@ -85,7 +85,7 @@ Always use python3 to be safe.
 Or set up an alias (we'll handle this automatically with venv).
 ```
 
-### What NOT to do?
+### 1.4 What NOT to do?
 ```
 ❌ Don't install multiple Python versions randomly
 ❌ Don't use system Python for your projects
@@ -99,7 +99,7 @@ Or set up an alias (we'll handle this automatically with venv).
 ---
 ## 2. VS Code - Your Code Editor
 Visual Studio Code (commonly known as VS Code) is a free, lightweight, and highly popular code editor developed by Microsoft.
-### Why VS Code?
+### 2.1 Why VS Code?
 Options you might have heard of:
 ```
 ┌─────────────────┬──────────────────────────────────────┐
@@ -114,13 +114,13 @@ Options you might have heard of:
 ```
 We use VS Code. It's free, fast, and used by millions.
 
-### Installing VS Code
+### 2.2 Installing VS Code
 1. Go to [code.visualstudio.com](https://code.visualstudio.com)
 2. Download for your OS
 3. Install it
 4. Open it
 
-### Essential Extensions - Install These Now
+### 2.3 Essential Extensions
 Open VS Code. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac). This opens the Extensions panel. Search and install each one:
 
 **1. Python (by Microsoft)**
@@ -176,7 +176,7 @@ Search: "Thunder Client"
 - "Prettier"          → code formatting (more for JS but useful)
 ```
 
-### VS Code Settings - Configure It Right
+### 2.4 VS Code Settings
 Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac). Type "Open Settings JSON". Select it. Add these settings:
 
 ```json
@@ -202,7 +202,7 @@ rulers: [88]        → Shows a line at 88 chars (Black formatter standard)
 autoSave            → Saves your file automatically
 ```
 
-### VS Code Keyboard Shortcuts You'll Use Daily
+### 2.5 VS Code Keyboard Shortcuts
 
 | Action                 | Windows/Linux | Mac            |
 | ---------------------- | ------------- | -------------- |
@@ -225,7 +225,7 @@ autoSave            → Saves your file automatically
 **Learn these. They will save you hours every week.**
 
 ---
-## 3. The Terminal - Your Most Important Tool
+## 3. The Terminal
 The terminal is a text-based way to control your computer.
 ```
 Instead of:                    You type:
@@ -235,7 +235,7 @@ Create new folder          →   mkdir new_folder
 ```
 As a backend engineer, you'll live in the terminal. Servers don't have graphical interfaces. Just terminal.
 
-### Opening the Terminal
+### 1.1 Opening the Terminal
 ```
 Windows:
   - Search "Command Prompt" or "PowerShell"
@@ -257,7 +257,7 @@ Linux:
   - Or use VS Code's built-in terminal
 ```
 
-### Essential Terminal Commands
+### 3.2 Essential Terminal Commands
 
 #### Navigation
 ```bash
@@ -336,7 +336,7 @@ pip list
 clear
 ```
 
-### Terminal Inside VS Code
+### 3.3 Terminal Inside VS Code
 You don't need to switch between VS Code and Terminal. VS Code has a built-in terminal.
 
 ```
@@ -351,7 +351,7 @@ This is what you'll use 90% of the time.
 ---
 ## 4. Virtual Environments
 The Most Important Concept Here.
-### The Problem Without Virtual Environments
+### 4.1 The Problem Without VE
 Imagine this:
 ```
 You have 2 projects:
@@ -392,7 +392,7 @@ No conflicts. Each project lives in its own world.
 - They don't share furniture (packages).
 - They don't interfere with each other.
 
-### Creating Your First Virtual Environment
+### 4.2 Creating Your First VE
 **Step 1: Create a project folder**
 ```bash
 # Go to where you keep projects
@@ -463,7 +463,7 @@ deactivate
 # Prompt goes back to normal (no venv prefix)
 ```
 
-### The Golden Rules of Virtual Environments
+### 4.3 The Golden Rules of VE
 ```
 Rule 1: ONE virtual environment per project
         Never share environments between projects
@@ -487,7 +487,7 @@ pip = Python's package installer, like an app store, but for Python libraries.
 
 Instead of manually downloading code, you just say: pip install requests. And pip downloads and installs it automatically.
 
-### Basic pip Commands
+### 5.1 Basic pip Commands
 ```bash
 # Always activate your venv first!
 source venv/bin/activate
@@ -517,7 +517,7 @@ pip show requests
 pip search requests
 ```
 
-### `requirements.txt`
+### 5.2 `requirements.txt`
 Sharing Your Dependencies.
 
 **The problem:**
@@ -548,7 +548,7 @@ uvicorn==0.24.0
 pip install -r requirements.txt
 ```
 
-### `.env` Files
+### 5.3 `.env` Files
 Keeping Secrets Safe.
 
 **Your app will have secrets:**
@@ -608,7 +608,7 @@ Watch [this](https://youtu.be/Y21OR1OPC9A) if you don't understand.
 ---
 ## 6. Poetry
 Modern Dependency Management.
-### Why Poetry When We Have pip?
+### 6.1 Why Poetry When We Have pip?
 pip + `requirements.txt` problems:
 ```
   ❌ No separation of dev vs production dependencies
@@ -629,7 +629,7 @@ Poetry advantages:
   ✅ One tool to rule them all
 ```
 
-### Installing Poetry
+### 6.2 Installing Poetry
 ```bash
 # Mac/Linux:
 curl -sSL https://install.python-poetry.org | python3 -
@@ -649,7 +649,7 @@ poetry --version
 # Output: Poetry (version 1.7.x)
 ```
 
-### Using Poetry
+### 6.3 Using Poetry
 
 **Start a new project:**
 ```bash
@@ -763,7 +763,7 @@ my_project/
 └── poetry.lock       ← commit this
 ```
 
-### pip vs Poetry
+### 6.4 pip vs Poetry
 | Feature                    | Pip                                          | Poetry                                                 |
 | -------------------------- | -------------------------------------------- | ------------------------------------------------------ |
 | **Primary Role**           | Package Installer                            | Project & Dependency Manager                           |
@@ -793,17 +793,12 @@ Use Poetry when:
 ---
 ## 7. How to Read Official Documentation?
 This Skill is More Valuable Than Any Tutorial.
-```
-Tutorials get outdated.
-Documentation is always current.
 
-Senior engineers read docs constantly.
-Junior engineers avoid docs and get stuck.
-
+Tutorials get outdated. Documentation is always current.
+Senior engineers read docs constantly. Junior engineers avoid docs and get stuck.
 The difference in your growth speed is massive.
-```
 
-### The Main Docs You'll Visit Constantly
+### 7.1 The Main Docs You'll Visit Constantly
 
 | Technology | Documentation URL |
 |-----------|-----------------|
@@ -817,7 +812,7 @@ The difference in your growth speed is massive.
 | PostgreSQL | [postgresql.org/docs/](https://postgresql.org/docs/) |
 | Redis | [redis.io/docs/](https://redis.io/docs/) |
 
-### How to Read Documentation Effectively
+### 7.2 How to Read Documentation Effectively
 ```
 Step 1: Start with "Getting Started" or "Quickstart"
         Get something running fast.
@@ -847,7 +842,7 @@ Step 6: Check the version
         Python 3.12 docs ≠ Python 3.8 docs
 ```
 
-### Practical Exercise
+### 7.3 Practical Exercise
 1. Go to [docs.python.org/3/](https://docs.python.org/3/)
 2. Find the documentation for the "list" type
 3. Find what the `.append()` method does
